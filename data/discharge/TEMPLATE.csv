@@ -1,0 +1,12 @@
+# TEMPLATE — 4 h discharge log at 15 mA constant-current load
+# Conditions: temp=??.? RH=?? % ; load set with electronic load (CC 15 mA)
+# Fail gate: stack voltage must stay >= 1.5 V for the full 4 h.
+timestamp_s,stack_v_V,rail_v_V,load_mA,note
+0,2.20,5.00,15,start
+60,2.18,5.00,15,
+600,2.16,5.01,15,
+1800,2.14,5.00,15,
+3600,2.11,5.00,15,
+7200,2.07,5.01,15,
+10800,2.03,5.00,15,
+14400,1.98,5.00,15,END @ 4h

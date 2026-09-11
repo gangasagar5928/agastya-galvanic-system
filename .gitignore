@@ -1,0 +1,6 @@
+# Claude Code harness workspace
+.claude/
+
+# OS / editor junk
+Thumbs.db
+.DS_Store

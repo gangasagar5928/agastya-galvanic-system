@@ -1,0 +1,12 @@
+# TEMPLATE — H2 electrolyzer gas log
+# Conditions: temp=??.? Patm=? kPa ; tube bore d=?mm ; electrolyte 0.25 M Na2SO4
+# Theoretical at I mA for t min: V = I*t/60 /(2*96485)*22400  (mL, STP-adjusted)
+time_min,current_mA,h2_collected_mL,h2_theoretical_mL,faradaic_pct,first_bubble_s,note
+0,15,0.00,0.000,,,circuit closed
+2,15,0.13,0.209,62.2,9,first bubble at 9 s
+5,15,0.36,0.522,69.0,,
+10,15,0.74,1.045,70.8,,
+20,15,1.49,2.090,71.3,,
+30,15,2.28,3.135,72.7,,
+# NOTE: figures above are PLACEHOLDERS to illustrate the schema, not measured data.
+# Replace with real numbers from Phase 3.

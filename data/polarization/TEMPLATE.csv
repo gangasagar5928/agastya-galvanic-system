@@ -1,0 +1,14 @@
+# TEMPLATE — Polarization curve data
+# Sweep current from 0 to max I in ~10 steps; record V once steady (~10 s / step)
+# 2-cell series stack. R_int extracted from ohmic (middle) region slope.
+I_mA,V_V,note
+0.0,2.205,oc
+2.5,2.180,
+5.0,2.155,
+10.0,2.100,
+15.0,2.045,prd operating region
+20.0,1.990,
+30.0,1.880,
+40.0,1.770,
+50.0,1.660,
+# NOTE: figures are PLACEHOLDERS to illustrate schema, not measured data.

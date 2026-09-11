@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD)
 
 **Project:** The Agastya Galvanic System — A Biodegradable, Non-Lithium Earthen Solid-State Primary Battery with Sub-Volt Energy Harvesting for Disposable Off-Grid Micro-Sensors
-**Document version:** v1.0 · **Date:** 2026-09-11 · **Owner:** Project Team, Topic 1
+**Document version:** v1.0 · **Date:** 2026-09-11 · **Owner:** Project Team
 
 ---
 
@@ -103,7 +103,7 @@ Full detail in [`docs/ARCHITECTURE.md`](ARCHITECTURE.md).
 - Every build step and measurement recorded in `data/`; assembly recipes versioned.
 
 ### 5.5 Documentation
-- ROADMAP, wiki, PRD, per-stage design docs, patent strategy, and defense prep all maintained under `Topic 1/`.
+- ROADMAP, wiki, PRD, per-stage design docs, patent strategy, and defense prep all maintained under the repo root.
 
 ---
 

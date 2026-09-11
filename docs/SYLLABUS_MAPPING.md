@@ -6,7 +6,7 @@
 
 ---
 
-## 1. How This Project Fits the Departmental EEE Syllabus
+## 1. How This Project Fits the EEE Syllabus
 
 | EEE Domain | Where this project engages | Educational output |
 |---|---|---|

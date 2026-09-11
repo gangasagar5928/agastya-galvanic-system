@@ -2,7 +2,7 @@
 
 > **A Biodegradable, Non-Lithium Earthen Solid-State Primary Battery with Sub-Volt Energy Harvesting for Disposable Off-Grid Micro-Sensors**
 
-*Topic 1 · Departmental Project · Last updated: 2026-09-11*
+*Last updated: 2026-09-11*
 
 ---
 

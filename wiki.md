@@ -2,7 +2,7 @@
 
 > **A Biodegradable, Non-Lithium Earthen Solid-State Primary Battery with Sub-Volt Energy Harvesting for Disposable Off-Grid Micro-Sensors**
 >
-> Departmental Project · Topic 1 · Academic Year 2026 · Last updated 2026-09-11
+> Academic Year 2026 · Last updated 2026-09-11
 
 ---
 
@@ -184,7 +184,7 @@ Full mapping: [`docs/SYLLABUS_MAPPING.md`](docs/SYLLABUS_MAPPING.md).
 ## Directory Map
 
 ```
-Topic 1/
+agastya-galvanic-system/
 ├── ROADMAP.md              ← you are here (start here)
 ├── wiki.md                 ← this file (project index & overview)
 ├── README.md               ← quick-start / one-page summary

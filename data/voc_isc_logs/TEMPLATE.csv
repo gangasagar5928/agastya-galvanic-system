@@ -1,0 +1,8 @@
+# TEMPLATE — Voc & Isc log
+# Conditions: temp=??.? RH=?? % ; DMM: 4½ digit HP34401 (or equiv)
+# One line per sample. Copy this file and rename to voc_isc_YYYY-MM-DD_HHMM.csv
+timestamp_s,cell1_voc_V,cell2_voc_V,stack_voc_V,stack_isc_mA,note
+0,1.100,1.105,2.205,0.0,measured open then short-pulsed Isc after 60 s settle
+60,1.095,1.102,2.197,0.0,idle
+120,1.093,1.100,2.193,0.0,idle
+# ... continue every 60 s for >= 30 min

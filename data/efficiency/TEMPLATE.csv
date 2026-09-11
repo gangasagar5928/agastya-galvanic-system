@@ -1,0 +1,10 @@
+# TEMPLATE — Efficiency sweep: eta vs (Vin, Iload)
+# Conditions: temp=??.? RH=?? % ; P_in metered at stack terminals; P_out at rail
+vin_V,iload_mA,vin_i_mA,pin_mW,vout_V,pout_mW,eta_pct,note
+1.60,5,46.8,74.9,5.02,25.1,33.5,low-load region
+1.60,10,80.3,128.5,5.03,50.3,39.1,
+1.80,15,60.4,108.7,5.02,75.3,69.3,operating point
+2.00,15,55.8,111.6,5.03,75.5,67.7,
+2.20,15,51.2,112.6,5.03,75.5,67.1,
+# NOTE: figures above are PLACEHOLDERS to illustrate the schema, not measured data.
+# Replace with real numbers from Phase 2 (target eta >= 82 % at the 1.8 V/15 mA row).

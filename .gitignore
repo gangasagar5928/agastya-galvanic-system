@@ -1,6 +1,8 @@
-# Claude Code harness workspace
+# Local environment / IDE
 .claude/
+.vscode/
+.idea/
 
-# OS / editor junk
+# OS junk
 Thumbs.db
 .DS_Store

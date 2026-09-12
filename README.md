@@ -1,4 +1,4 @@
-# 🌱 The Agastya Galvanic System
+# The Agastya Galvanic System
 
 ![Agastya Galvanic System](Logo.png)
 
@@ -8,21 +8,21 @@
 
 ---
 
-## One Paragraph
+## Overview
 
 A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-in-sawdust / Cu) drives an **ultra-low-input synchronous boost converter** that cold-starts below 0.9 V and outputs a regulated **5.0 V ± 2 % rail at ≥ 82 % efficiency**. That rail powers a **graphite-electrode micro-electrolyzer** that splits water into visible hydrogen — all with **zero secondary batteries** and **0 % lithium**.
 
-## Headline Targets
+## Key Specifications & Target Metrics
 
 | Metric | Target | Status |
 |---|---|---|
-| Stack open-circuit voltage (2-cell) | ≥ 2.10 V | ⬜ To verify (Phase 1) |
-| Short-circuit current @ 25 °C | ≥ 20 mA | ⬜ To verify (Phase 1) |
-| Regulated rail | 5.0 V ± 2 % | ⬜ To verify (Phase 2) |
-| End-to-end efficiency | ≥ 82 % | ⬜ To verify (Phase 2) |
-| Continuous discharge | ≥ 4 h @ 15 mA | ⬜ To verify (Phase 4) |
-| Cathodic bubbling time | ≤ 10 s | ⬜ To verify (Phase 3) |
-| Secondary battery assistance | 0 | ✅ By design |
+| Stack open-circuit voltage (2-cell) | ≥ 2.10 V | Pending verification (Phase 1) |
+| Short-circuit current @ 25 °C | ≥ 20 mA | Pending verification (Phase 1) |
+| Regulated rail | 5.0 V ± 2 % | Pending verification (Phase 2) |
+| End-to-end efficiency | ≥ 82 % | Pending verification (Phase 2) |
+| Continuous discharge | ≥ 4 h @ 15 mA | Pending verification (Phase 4) |
+| Cathodic bubbling time | ≤ 10 s | Pending verification (Phase 3) |
+| Secondary battery assistance | 0 | By design |
 
 ## Quick Start
 
@@ -50,13 +50,12 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 | [`docs/REPORT.md`](docs/REPORT.md) | Thesis/report skeleton |
 | [`docs/PRESENTATION.md`](docs/PRESENTATION.md) | Slides outline + viva Q&A bank |
 
-## Status
+## Project Status
+Current Phase: Phase 0/7 (Foundations & Documentation)
 
-**Active · Phase 0/7** *(Foundations & Safety complete — documentation in place)*
-
-- ✅ Documentation scaffold complete (2026-09-11)
-- ⬜ Phase 1: Cell chemistry bench (next)
+- Initial specifications and safety analysis completed
+- Phase 1: Cell chemistry bench testing underway
 
 ---
 
-*Maintain statuses as phases progress. Every checkmark should be backed by a timestamped log in `data/`.*
+*Measurement logs and test curves will be recorded under `data/` as phases progress.*

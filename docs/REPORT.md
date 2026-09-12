@@ -27,7 +27,7 @@
 - [ ] Porous separators & lignocellulose in batteries
 - [ ] Ultra-low-voltage boost converters & energy harvesting
 - [ ] Micro-electrolysis / water splitting on carbon electrodes
-- [ ] Prior patent landscape (from `PATENT_STRATEGY.md` §2)
+- [ ] Prior technical and architectural landscape review
 
 ### 3. System Design & Architecture
 - [ ] Top-level block diagram (`ARCHITECTURE.md` §1)
@@ -62,13 +62,13 @@
 
 ### 8. References
 - [ ] IEEE numbered style
-- [ ] Key references: Daniell (1836), Nernst, Butler–Volmer, boost IC datasheets (TPS61099), Faraday/electrolysis texts, Indian Patents Act §3(p)
+- [ ] Key references: Daniell (1836), Nernst, Butler–Volmer, boost IC datasheets (TPS61099), Faraday/electrolysis texts, green electrochemistry benchmarks
 
 ### Appendices
 - [ ] A: BOM with prices (`BOM.md`)
 - [ ] B: Safety & MSDS extracts (`SAFETY.md`)
 - [ ] C: Full data logs (`data/` pointers)
-- [ ] D: Patent claim drafts (`PATENT_STRATEGY.md` §4)
+- [ ] D: Innovation & design analysis
 - [ ] E: Fabrication photos (to be captured Phase 1–3)
 
 ---

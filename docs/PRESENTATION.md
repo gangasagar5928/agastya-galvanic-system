@@ -19,7 +19,7 @@
 | 9 | **Electrolyzer:** Faraday's law, 15 mA → ~1 mL/min H₂, Faradaic efficiency ≥ 70 % |
 | 10 | **Results:** Empirical Voc/I_sc/Polarization/η/H₂ plots (bench logs from `data/`) |
 | 11 | **PRD Verification Matrix:** Gate status (Phase 0 complete; experimental verification gates) |
-| 12 | **Patent & Publication Strategy:** Provisional filing (§3(p) device/composition claim) & IEEE TENSYMP 2026 conference track |
+| 12 | **Novelty & Publication Strategy:** Architectural innovation & IEEE TENSYMP 2026 conference track |
 | 13 | **Sustainability Scorecard:** vs Li-ion & Pb-acid |
 | 14 | **Future:** Scaling, sensor integration, IoT nodes |
 | 15 | **Q&A** |
@@ -73,15 +73,15 @@ A13. Parasitic side reactions (carbon oxidation, peroxide), gas dissolution, lea
 **Q14. What happens to the gas? H₂ safety?**
 A14. H₂ rises and disperses safely in a ventilated room; never enclosed; no flames. (SAFETY.md §4.4)
 
-### Category D — Patent / Novelty
-**Q15. Is this patentable?**
-A15. Chemistry is not (public domain + §3(p) traditional knowledge). We claim device + composition: (1) dendrite-retardant lignocellulose–ceramic separator at a specific packing ratio; (2) integrated PMIC↔R_int-matched micro-electrolyzer package.
+### Category D — Innovation & Prior Art
+**Q15. What makes this design novel?**
+A15. Core chemistry is well-known (open domain + traditional knowledge). Novelty lies in device architecture: (1) dendrite-retardant lignocellulose–ceramic composite separator at specific packing ratio; (2) integrated PMIC↔R_int-matched micro-electrolyzer package without secondary electrochemical storage.
 
 **Q16. Isn't the Agastya Samhita claim pseudoscience?**
 A16. We don't claim the text as a scientifically reproducible recipe; we use it as an inspiration for the sustainable-material combination and give it due cultural credit. All measurements are modern and verifiable.
 
-**Q17. Why target 45–50 % grant probability?**
-A17. The claims are narrow (device/composition), prior art is dense (Daniell, wood separators, boost converters). Narrow, well-evidenced claims → moderate chance; worth it for a provisional filing.
+**Q17. How does this compare against conventional Daniell cell implementations?**
+A17. Traditional setups suffer from Cu²⁺ crossover and short lifespans. Our immobilized sawdust matrix suppresses convection and copper dendrites, enabling sustained galvanic discharge with integrated solid-state cold-start boost.
 
 ### Category E — Sustainability / Ethics
 **Q18. Why not lithium-ion?**
@@ -98,7 +98,7 @@ A20. Materials: kiln-fired clay (~CO₂ from firing), mined Cu/Zn (pre-existing 
 A21. Direct hardwired startup (`EN = VIN`) would indeed sag voltage below UVLO ($50\text{ mA} \times 30\ \Omega = 1.5\text{ V}$ drop). We mitigated this by: (1) an input buffer reservoir capacitor ($C_{\text{in}} = 220\ \mu\text{F} \parallel 47\ \mu\text{F}$) supplying $\sim 0.61\text{ mJ}$ of energy to absorb the 5 ms startup inrush spike; (2) a delayed/hysteretic enable pin holding the PMIC in 1 µA shutdown until $C_{\text{in}}$ reaches full $V_{\text{oc}}$; and (3) larger surface-area electrodes in the full-scale build dropping stack $R_{\text{int}}$ to $\le 16\ \Omega$.
 
 **Q22. Why target an IEEE conference rather than an IEEE Transactions journal?**
-A22. Transactions journals require 2+ years of continuous cycling data and advanced EIS spectroscopy. An IEEE Region 10 conference (such as IEEE TENSYMP 2026 or TENCON) provides peer-reviewed IEEEXplore indexing suitable for an undergraduate capstone, while establishing verified prior art to support our provisional patent application.
+A22. Transactions journals require 2+ years of continuous cycling data and advanced EIS spectroscopy. An IEEE Region 10 conference (such as IEEE TENSYMP 2026 or TENCON) provides peer-reviewed IEEEXplore indexing suitable for an undergraduate capstone, establishing verified academic priority and open technical benchmark.
 
 **Q23. Why does the GitHub repository show Phase 0 while the presentation outline covers the entire pipeline?**
 A23. Phase 0 represents completed foundations (safety analysis, PMIC modeling, PRD specification, and BOM procurement). The remaining phases represent the planned 6-week execution gates. Metrics in the presentation are explicit target thresholds to be verified on the bench, not pre-claimed results.
@@ -113,7 +113,7 @@ A23. Phase 0 represents completed foundations (safety analysis, PMIC modeling, P
 4. **At ≤ 10 s:** point at tube — H₂ bubbles rising. Narrate "10-second criterion met."
 5. **Show** rail at 5.00–5.10 V on DMM.
 6. **Narrate** the 4 h discharge, the η ≥ 82 %, and the zero-secondary-battery fact.
-7. **Close** with sustainability line + patent claims slide.
+7. **Close** with sustainability line + technical novelty summary.
 
 ---
 
@@ -122,7 +122,7 @@ A23. Phase 0 represents completed foundations (safety analysis, PMIC modeling, P
 - [ ] 1 A4-page system diagram (colour, laminated)
 - [ ] PRD verification matrix printout
 - [ ] 2–3 representative plots (polarization, η map, H₂ curve)
-- [ ] Printed patent claim sketch
+- [ ] Printed architecture and schematic summary
 - [ ] Safety card (PPE + spill actions)
 - [ ] Live demo rig (if permitted) or recorded video
 

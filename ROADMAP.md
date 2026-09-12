@@ -14,7 +14,7 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - Boosts the variable 1.6–2.2 V stack to a regulated **5.0 V ± 2 % rail at ≥ 82 % end-to-end efficiency**.
 - Drives a **solid-state micro-electrolyzer** producing visible H₂ gas — **zero secondary battery assistance**.
 - Uses only **biodegradable, non-toxic, non-lithium materials**: terracotta, sawdust, copper, zinc, aqueous CuSO₄.
-- Roots itself in the **Agastya Samhita** traditional-knowledge lineage while remaining a defensible patent claim (device + composition, not chemistry).
+- Roots itself in the **Agastya Samhita** traditional-knowledge lineage while demonstrating defensible engineering novelty (device architecture + composite separator, not chemistry).
 
 **North Star metric:** Standalone demo where the cell stack alone (no bench supply, no rechargeable buffer) sustains ≥ 4 h continuous discharge at 15 mA while bubbling hydrogen within 10 s of circuit closure.
 
@@ -121,14 +121,11 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - Zero battery assistance verified.
 - Empirical datasets logged in `data/` directory.
 
-### Phase 5 — Patent Filing & IEEE Conference Publication (Week 7)
+### Phase 5 — IEEE Conference Publication & Defense Prep (Week 7)
 
-**Goal:** Secure intellectual property priority date and submit conference paper.
+**Goal:** Submit peer-reviewed conference paper and rehearse defense.
 
-- [ ] **Provisional Patent Application:** File provisional patent with Indian Patent Office (IPO) under Educational Institution tier (Statutory fee: ₹1,750). Claims focus on:
-  1. Composite separator architecture (de-resinated lignocellulose + unglazed porous ceramic shell).
-  2. Sub-volt energy-harvesting electrolyzer package with source-impedance matched PMIC.
-- [ ] **IEEE Conference Manuscript Preparation:** Target IEEE TENSYMP 2026 / IEEE TENCON (Region 10 conference with IEEEXplore indexing):
+- [ ] **Technical Disclosure & Manuscript Submission:** Target IEEE TENSYMP 2026 / IEEE TENCON (Region 10 conference with IEEEXplore indexing):
   1. Empirical polarization and discharge curves.
   2. Randles equivalent circuit model validation.
   3. Faradaic efficiency ($\eta_F$) and gas yield calculations.
@@ -136,7 +133,6 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - [ ] Departmental viva presentation rehearsal with live hardware demonstrator.
 
 **Exit criteria (Phase 5 gates):**
-- Provisional patent application filed with IPO.
 - Conference manuscript completed with empirical datasets.
 - Successful viva defense with live working prototype.
 
@@ -152,7 +148,7 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 | M4 Boost stage cold-starts & regulates | Week 6 | Vin(min) ≤ 0.9 V, 5 V ± 2 %, η ≥ 82 % | Low-Vin cold-start latch-up |
 | M5 Electrolyzer bubbling ≤ 10 s | Week 6 | Gas visible & steady | Cell/rail sag under converter inrush |
 | M6 End-to-end 4 h demo | Week 7 | All success criteria green | Cumulative voltage decay |
-| M7 Documentation + patent paper | Week 8 | All docs reviewed | — |
+| M7 Documentation & conference paper | Week 8 | All docs reviewed | — |
 
 ---
 
@@ -162,12 +158,12 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 |---|---|---|---|---|
 | R1 | Voc below 2.10 V across two cells | Med | High | Cell preconditioning, higher-purity Cu, tighter Zn surface prep |
 | R2 | Copper crossover through sawdust matrix | Med | Med | Denser matrix, thicker wall, de-resination removes capillary shortcuts |
-| R3 | Zinc dendrites bridging to Cu | Med | High | Dendrite-retardant matrix (core claim), periodic osmosis check |
+| R3 | Zinc dendrites bridging to Cu | Med | High | Dendrite-retardant matrix, periodic osmosis check |
 | R4 | Cold-start below 0.9 V failure | Med | High | Redundant boost IC options (see `docs/PMIC.md`); keep cell ≥ 1.6 V working range |
 | R5 | Efficiency dips < 82 % at 15 mA | Med | Med | Operate at peak-power duty cycle; synchronous rectification is mandatory |
 | R6 | Electrolyzer sags the rail on connection | Med | Med | Soft-start / pre-charge cap on electrolyzer bus |
 | R7 | Sawdust matrix dries out mid-test | Low–Med | High | Saturate with CuSO₄ before runs; humidity-controlled storage |
-| R8 | Patent objection under Indian Patents Act §3(p) | High | — | Claim device & composition only, never chemical formula; see `docs/PATENT_STRATEGY.md` |
+| R8 | Academic prior art overlap with traditional knowledge | High | Med | Focus on quantitative device architecture & composite matrix characterization |
 
 ---
 
@@ -195,7 +191,7 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 | **W3 (28 Sep–4 Oct)** | Boost converter breadboard, cold-start verification |
 | **W4 (5–11 Oct)** | Efficiency + regulation tuning; electrolyzer assembly |
 | **W5 (12–18 Oct)** | End-to-end integration, 4 h run, demo dry-run |
-| **W6 (19–25 Oct)** | Documentation freeze, patent paper, defense prep |
+| **W6 (19–25 Oct)** | Documentation freeze, conference paper, defense prep |
 
 ---
 
@@ -206,7 +202,7 @@ The project is **Done** when:
 1. Every PRD functional requirement passes its verification method (Section 5) with logged evidence.
 2. Demo runs unattended for 4 hours: 15 mA load, rail at 5.0 V ± 2 %, H₂ bubbling steady.
 3. All documentation (`wiki.md`, `docs/*`, `data/*`, `tools/*`) is complete and internally consistent.
-4. Patent strategy doc is finalized with claims ready for a professional attorney.
+4. Complete technical paper manuscript is finalized for IEEE conference submission.
 5. The EEE syllabus map (Energy Storage / Power Electronics / Electrochemical Engg) is signed off by the advisor.
 
 ---

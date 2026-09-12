@@ -103,7 +103,7 @@ Full detail in [`docs/ARCHITECTURE.md`](ARCHITECTURE.md).
 - Every build step and measurement recorded in `data/`; assembly recipes versioned.
 
 ### 5.5 Documentation
-- ROADMAP, wiki, PRD, per-stage design docs, patent strategy, and defense prep all maintained under the repo root.
+- ROADMAP, wiki, PRD, per-stage design docs, and defense prep all maintained under the repo root.
 
 ---
 

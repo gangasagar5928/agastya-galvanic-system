@@ -40,8 +40,7 @@
 | Power interface | Raw analogue, unregulated | **5.0 V regulated rail via sync boost, impedance matched** |
 | Downstream use | — | **On-site hydrogen via micro-electrolyzer, no secondary battery** |
 | End-of-life | Discarded electrolyte, metal waste | **Biodegradable, non-toxic disposal pathway** |
-| Cultural anchor | European 19th-century chemistry | **Agastya Samhita lineage — traditional knowledge as inspiration, not patentable chemistry** |
-
+| Cultural anchor | European 19th-century chemistry | **Agastya Samhita lineage — traditional knowledge inspiration for sustainable architecture** |
 ---
 
 ## 4. Sustainability Scorecard (vs Lithium & Lead)
@@ -62,7 +61,7 @@
 | Rubric item | Evidence |
 |---|---|
 | Technical correctness | `docs/ELECTROCHEM.md`, `docs/PMIC.md`, `docs/ELECTROLYZER.md` |
-| Novelty & innovation | `docs/PATENT_STRATEGY.md` — non-obvious separator + integrated package |
+| Novelty & innovation | `docs/ARCHITECTURE.md` & `docs/ELECTROCHEM.md` — non-obvious separator + integrated package |
 | Sustainability & ethics | wiki Sustainability Scorecard; SAFETY discipline; traditional-knowledge respect |
 | Practical execution | `ROADMAP.md` phases, `data/` evidence, `tools/` analysis scripts |
 | Communication | Wiki, report, presentation Q&A bank |

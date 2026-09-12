@@ -45,7 +45,6 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 | [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Nernst, polarisation, R_int, Faraday theory |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budget |
 | [`docs/ELECTROLYZER.md`](docs/ELECTROLYZER.md) | Electrolyzer design, gas metrology, η_F protocol |
-| [`docs/PATENT_STRATEGY.md`](docs/PATENT_STRATEGY.md) | Novelty analysis & claim strategy |
 | [`docs/SYLLABUS_MAPPING.md`](docs/SYLLABUS_MAPPING.md) | EEE domain mapping ("New POV") |
 | [`docs/REPORT.md`](docs/REPORT.md) | Thesis/report skeleton |
 | [`docs/PRESENTATION.md`](docs/PRESENTATION.md) | Slides outline + viva Q&A bank |

@@ -59,7 +59,6 @@ The system is **100 % biodegradable, non-toxic, and lithium-free** — a disposa
 | [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Electrochemistry theory, ancient citations, Nernst, polarisation |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budgeting |
 | [`docs/ELECTROLYZER.md`](docs/ELECTROLYZER.md) | Electrolyzer design, Faradaic efficiency, gas metrology |
-| [`docs/PATENT_STRATEGY.md`](docs/PATENT_STRATEGY.md) | Novelty analysis, prior art, claim strategy |
 | [`docs/SYLLABUS_MAPPING.md`](docs/SYLLABUS_MAPPING.md) | EEE framework "New POV" mapping |
 | [`docs/REPORT.md`](docs/REPORT.md) | Formal report skeleton (for thesis write-up) |
 | [`docs/PRESENTATION.md`](docs/PRESENTATION.md) | Defense/viva Q&A bank & presentation outline |
@@ -120,7 +119,7 @@ Overall: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s) &nbsp;&nbsp; **E°cell = 1.
 
 - **The separator is a lignocellulose (sawdust) capillary matrix** suspended in a **porous terracotta wall** — not a paper/Celgard/zirconia separator.
 - The micro-capillary structure of wet sawdust **immobilizes Cu²⁺** (retarding crossover) **while** providing interstitial pathways for Zn²⁺ and SO₄²⁻ migration.
-- The wet organic matrix acts as a **dendrite-retardant solid–liquid separator** — the central patentable claim.
+- The wet organic matrix acts as a **dendrite-retardant solid–liquid separator** — the core structural innovation.
 
 See [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) for the full treatment (Nernst, polarisation, R_int, Faradaic efficiency).
 
@@ -188,13 +187,11 @@ Evidence lives under [`data/`](data/).
 
 ---
 
-## Patent Position (short version)
+## Technical Novelty & Engineering Innovation
 
-> Traditional knowledge (Agastya Samhita) and basic Daniell chemistry are **non-patentable** in India under §3(p). Do **not** claim the chemistry. Claim the **device + composition**:
-> 1. A bio-galvanic composite separator — packing ratio of de-resinated lignocellulose fibers + porous earthen ceramic to retard Zn dendrites in open-cell devices.
-> 2. An integrated self-boosting micro-electrolyzer — galvanic cell + PMIC impedance-matched (R_int) to micro-electrolysis loads.
-
-Full detail: [`docs/PATENT_STRATEGY.md`](docs/PATENT_STRATEGY.md).
+The primary engineering contributions are:
+1. **Bio-galvanic composite separator:** Specific packing ratio of de-resinated lignocellulose fibers + porous earthen ceramic wall to retard Zn dendrites in open-cell devices without fluoropolymer membranes.
+2. **Integrated self-boosting micro-electrolyzer package:** Galvanic cell + PMIC impedance-matched to high internal resistance ($R_{\text{int}}$) micro-electrolysis loads.
 
 ---
 
@@ -220,12 +217,12 @@ agastya-galvanic-system/
 ├── docs/
 │   ├── PRD.md
 │   ├── ARCHITECTURE.md
+│   ├── FULL_SCALE_BOM.md
 │   ├── BOM.md
 │   ├── SAFETY.md
 │   ├── ELECTROCHEM.md
 │   ├── PMIC.md
 │   ├── ELECTROLYZER.md
-│   ├── PATENT_STRATEGY.md
 │   ├── SYLLABUS_MAPPING.md
 │   ├── REPORT.md
 │   └── PRESENTATION.md

@@ -81,7 +81,7 @@ Sub-blocks:
 
 - **Base electrolyte:** 1.0 M CuSO₄(aq).
 - **Immobilizer:** de-resinated hardwood sawdust — boiled to strip resins/tannins, rinsed, dried, then graded.
-- **Packing ratio:** controlled packing (see PATENT_STRATEGY for claimable ratios; target internal-porosity ≈ 50–60 % at Phase-1 calibration) so the gel/slurry wicks uniformly into the terracotta wall.
+- **Packing ratio:** controlled packing (target internal-porosity ≈ 50–60 % at Phase-1 calibration) so the gel/slurry wicks uniformly into the terracotta wall.
 - Function: capillary retention of electrolyte, Cu²⁺ immobilization, **dendrite retardation**.
 
 ---
@@ -101,7 +101,7 @@ Sub-blocks:
 ```
 
 - **Low-Vin start:** separate ring-oscillator + charge-pump gate booster so the hi-side PFET can be driven above V_in.
-- **Peak-power point:** the converter operates at the duty cycle that maximizes stack power → matches R_int (impedance matching per patent claim 2).
+- **Peak-power point:** the converter operates at the duty cycle that maximizes stack power → matches R_int (dynamic source impedance matching).
 - **Design files:** (hardware output) `hardware/` in future revision.
 
 ---

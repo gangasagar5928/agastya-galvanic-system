@@ -4,6 +4,41 @@
 
 ---
 
+## 0. Ancient Sanskrit Text Citations & Formulation (*Agastya Samhita*)
+
+The working electrochemistry directly re-evaluates the classical formulation recorded in the *Agastya Samhita*:
+
+### Primary Galvanic Cell Verse
+```sanskrit
+संस्थाप्य मृण्मये पात्रे ताम्रपत्रं सुसंस्कृतम्।
+छादयेच्छिखिग्रीवेन चार्द्राभिः काष्ठपांसुभिः॥
+दस्तालोष्टो निधातव्यस्ततः पारदसंयुतः।
+संयोगाज्जायते तेजो मित्रावरुणसंज्ञितम्॥
+```
+> *Saṃsthāpya mṛṇmaye pātre tāmrapatraṃ susaṃskṛtam |*  
+> *Chādayecchikhigrīvena cārdrābhiḥ kāṣṭhapāṃsubhiḥ ||*  
+> *Dastāloṣṭo nidhātavyastataḥ pāradasaṃyutaḥ |*  
+> *Saṃyogājjāyate tejo mitrāvaruṇasaṃjñitam ||*  
+
+### Electrolytic Water-Splitting Verse
+```sanskrit
+अनेन जलभङ्गोऽस्ति प्राणोदानेषु वायुषु।
+एवं शतानां कुम्भानां संयोगः कार्यकृत्तमः॥
+```
+> *Anena jalabhaṅgo'sti prāṇodāneṣu vāyuṣu |*  
+> *Evaṃ śatānāṃ kumbhānāṃ saṃyogaḥ kāryakṛttamaḥ ||*  
+
+### Theoretical Mapping
+- **Mṛṇmaya Pātra (Earthen Pot):** Porous terracotta membrane separator ($100\text{ mL}$).
+- **Tāmra-patra (Copper Plate):** Cathode substrate, site of reduction ($\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}$, $E^\circ = +0.34\text{ V}$).
+- **Dastā-loṣṭa (Zinc Rod):** Sacrificial anode, site of oxidation ($\text{Zn} \rightarrow \text{Zn}^{2+} + 2e^-$, $E^\circ = -0.76\text{ V}$).
+- **Shikhigrīva (Copper Sulfate):** Depolarizer and ionic salt matrix ($1.0\text{ M CuSO}_4$).
+- **Kāṣṭhapāṃsu (Moist Sawdust):** Immobilized lignocellulosic hydrogel/electrolyte matrix with micro-capillary transport.
+- **Tejas Mitrāvaruṇa (EMF):** Standard reversible galvanic potential $\Delta E^\circ = 1.10\text{ V}$ per cell; 2-cell series stack $E^\circ_{\text{stack}} = 2.20\text{ V}$.
+- **Jalabhaṅga / Prāṇa + Udāna:** Water electrolysis splitting $2\text{H}_2\text{O} \rightarrow 2\text{H}_2\uparrow (\text{Udāna at cathode}) + \text{O}_2\uparrow (\text{Prāṇa at anode})$.
+
+---
+
 ## 1. Half-Reactions & Standard Potentials
 
 ### Daniell Cell (the working chemistry)

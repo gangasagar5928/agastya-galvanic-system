@@ -1,4 +1,4 @@
-# 🌱 The Agastya Galvanic System — Project Wiki
+# The Agastya Galvanic System — Project Wiki
 
 > **A Biodegradable, Non-Lithium Earthen Solid-State Primary Battery with Sub-Volt Energy Harvesting for Disposable Off-Grid Micro-Sensors**
 >
@@ -6,11 +6,39 @@
 
 ---
 
-## What is this project?
+## Project Overview
 
-An **eco-friendly primary battery stack** inspired by the *Agastya Samhita* — an ancient Sanskrit text on electrochemistry sometimes attributed to the sage Agastya. We combine:
+An **eco-friendly primary battery stack** inspired by the *Agastya Samhita* — an ancient Sanskrit text on electrochemistry and electrical generation attributed to Sage Agastya:
 
-1. **A primary galvanic cell** made from two **unglazed terracotta vessels** (100 mL each), **99.9 % copper cathode plates**, **zinc anode sheets**, and a **1.0 M aqueous CuSO₄ electrolyte immobilized in a de-resinated hardwood sawdust matrix**.
+### Classical Sanskrit Verses (*Agastya Samhita*)
+
+**Cell Formulation:**
+```sanskrit
+संस्थाप्य मृण्मये पात्रे ताम्रपत्रं सुसंस्कृतम्।
+छादयेच्छिखिग्रीवेन चार्द्राभिः काष्ठपांसुभिः॥
+दस्तालोष्टो निधातव्यस्ततः पारदसंयुतः।
+संयोगाज्जायते तेजो मित्रावरुणसंज्ञितम्॥
+```
+> *Saṃsthāpya mṛṇmaye pātre tāmrapatraṃ susaṃskṛtam |*  
+> *Chādayecchikhigrīvena cārdrābhiḥ kāṣṭhapāṃsubhiḥ ||*  
+> *Dastāloṣṭo nidhātavyastataḥ pāradasaṃyutaḥ |*  
+> *Saṃyogājjāyate tejo mitrāvaruṇasaṃjñitam ||*  
+>
+> **Meaning:** Place a well-cleaned copper sheet (*tāmrapatra*) into an earthenware vessel (*mṛṇmaya pātra*). Cover it with copper sulfate (*shikhigrīva*, peacock-blue salt) and moist sawdust (*ārdra kāṣṭhapāṃsu*). Insert a zinc rod (*dastāloṣṭa*). By this galvanic combination is generated electrical energy (*tejas*) designated as *Mitra-Varuna* (complementary polarities / electromotive force).
+
+**Electrolytic Gas Evolution:**
+```sanskrit
+अनेन जलभङ्गोऽस्ति प्राणोदानेषु वायुषु।
+एवं शतानां कुम्भानां संयोगः कार्यकृत्तमः॥
+```
+> *Anena jalabhaṅgo'sti prāṇodāneṣu vāyuṣu |*  
+> *Evaṃ śatānāṃ kumbhānāṃ saṃyogaḥ kāryakṛttamaḥ ||*  
+>
+> **Meaning:** By this electrical power, water is split (*jalabhaṅga*), evolving into *Prāṇa* (Oxygen at the positive electrode) and *Udāna* (Hydrogen at the negative electrode). Multiple cells in series provide powerful electrochemical actuation.
+
+### Engineering Implementation
+We implement this classical formulation using modern precision materials and power electronics:
+1. **A primary galvanic cell** made from two **unglazed terracotta vessels** (100 mL each), **99.9 % copper cathode plates**, **zinc anode sheets/rods**, and a **1.0 M aqueous CuSO₄ electrolyte immobilized in a de-resinated hardwood sawdust matrix**.
 2. **An ultra-low-input synchronous boost converter** that cold-starts below **0.9 V** and steps the variable 1.6–2.2 V stack up to a regulated **5.0 V ± 2 % rail at ≥ 82 % efficiency**.
 3. **A solid-state micro-electrolyzer** using **non-sacrificial graphite pencil electrodes** inside a **graduated micro-fluidic gas collection tube** — producing visible hydrogen with **zero secondary battery assistance**.
 
@@ -23,11 +51,12 @@ The system is **100 % biodegradable, non-toxic, and lithium-free** — a disposa
 | File | Purpose |
 |---|---|
 | [`ROADMAP.md`](ROADMAP.md) | Schedule, milestones, risk register, success criteria |
+| [`docs/FULL_SCALE_BOM.md`](docs/FULL_SCALE_BOM.md) | Full-scale prototype BOM with component specs, sourcing & improvements |
 | [`docs/PRD.md`](docs/PRD.md) | Requirements specification (functional + success criteria) |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System architecture, block diagram, interfaces |
-| [`docs/BOM.md`](docs/BOM.md) | Bill of materials with specs & sourcing |
+| [`docs/BOM.md`](docs/BOM.md) | Benchtop PoC bill of materials with specs & sourcing |
 | [`docs/SAFETY.md`](docs/SAFETY.md) | Hazard assessment, PPE, waste handling |
-| [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Electrochemistry theory, half-reactions, Nernst, polarisation |
+| [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Electrochemistry theory, ancient citations, Nernst, polarisation |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budgeting |
 | [`docs/ELECTROLYZER.md`](docs/ELECTROLYZER.md) | Electrolyzer design, Faradaic efficiency, gas metrology |
 | [`docs/PATENT_STRATEGY.md`](docs/PATENT_STRATEGY.md) | Novelty analysis, prior art, claim strategy |

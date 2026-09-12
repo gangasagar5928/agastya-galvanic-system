@@ -18,6 +18,32 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 
 **North Star metric:** Standalone demo where the cell stack alone (no bench supply, no rechargeable buffer) sustains ≥ 4 h continuous discharge at 15 mA while bubbling hydrogen within 10 s of circuit closure.
 
+### Traditional Sanskrit Text Citations (*Agastya Samhita*)
+
+#### Cell Construction (*Agastya Samhita*, Verse 1)
+```sanskrit
+संस्थाप्य मृण्मये पात्रे ताम्रपत्रं सुसंस्कृतम्।
+छादयेच्छिखिग्रीवेन चार्द्राभिः काष्ठपांसुभिः॥
+दस्तालोष्टो निधातव्यस्ततः पारदसंयुतः।
+संयोगाज्जायते तेजो मित्रावरुणसंज्ञितम्॥
+```
+> *Saṃsthāpya mṛṇmaye pātre tāmrapatraṃ susaṃskṛtam |*  
+> *Chādayecchikhigrīvena cārdrābhiḥ kāṣṭhapāṃsubhiḥ ||*  
+> *Dastāloṣṭo nidhātavyastataḥ pāradasaṃyutaḥ |*  
+> *Saṃyogājjāyate tejo mitrāvaruṇasaṃjñitam ||*  
+>
+> **Translation:** Place a well-cleaned copper sheet (*tāmrapatra*) into an earthenware vessel (*mṛṇmaya pātra*). Cover it with copper sulfate (*shikhigrīva*, peacock-blue salt) and moist sawdust (*ārdra kāṣṭhapāṃsu*). Insert a zinc rod (*dastāloṣṭa*). By this galvanic conjunction is generated electrical energy (*tejas*) designated as *Mitra-Varuna* (complementary polarities / electromotive force).
+
+#### Water Splitting & Gas Evolution (*Agastya Samhita*, Verse 2)
+```sanskrit
+अनेन जलभङ्गोऽस्ति प्राणोदानेषु वायुषु।
+एवं शतानां कुम्भानां संयोगः कार्यकृत्तमः॥
+```
+> *Anena jalabhaṅgo'sti prāṇodāneṣu vāyuṣu |*  
+> *Evaṃ śatānāṃ kumbhānāṃ saṃyogaḥ kāryakṛttamaḥ ||*  
+>
+> **Translation:** By this electrical power, water decomposition occurs (*jalabhaṅga*), separating into *Prāṇa* (Oxygen at the positive electrode) and *Udāna* (Hydrogen at the negative electrode). Connecting multiple such vessels in series provides powerful electrochemical actuation.
+
 ---
 
 ## 2. Phase Plan

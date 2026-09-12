@@ -91,7 +91,7 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - Regulated 5 V rail within 2 % tolerance under 15 mA constant load.
 - End-to-end power conversion efficiency ≥ 82 % at the operating point.
 
-### Phase 3 — Electrolyzer Stage (Week 5–6)
+### Phase 3 — Electrolyzer Stage (Week 5)
 
 **Goal:** Visible, measurable H₂ generation from regulator rail — nothing else.
 
@@ -99,30 +99,46 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - [ ] Calibrate collection tube graduations (mL of gas per cm) in `docs/ELECTROLYZER.md`.
 - [ ] Confirm cathodic bubbling ≤ 10 s after circuit closure (video-document with timestamp).
 - [ ] Measure gas collection rate (µL/min) & Faradaic efficiency vs. expected.
-- [ ] On-line impedance check: does the electrolyzer load keep the boost converter in its 82 % window?
+- [ ] On-line impedance check: verify electrolyzer load keeps the boost converter in its ≥ 82 % window.
 
-**Exit criteria:**
+**Exit criteria (Phase 3 gates):**
 - Visible bubbling at cathode ≤ 10 s of closure.
 - Steady collection rate logged for ≥ 30 min.
 - Faradaic efficiency calculation documented (≥ 70 % target).
 
-### Phase 4 — Integration & Demo Readiness (Week 6–7)
+### Phase 4 — System Integration & Characterization (Week 6)
 
-- [ ] Integration harness: stack → boost → electrolyzer, single mechanical enclosure.
-- [ ] 4-hour end-to-end run; log stack V, rail V, gas volume.
-- [ ] Cold-restart test (circuit opened 1 h, then re-closed — confirm ≤ 10 s to bubbling).
-- [ ] Build demo storyboard + safety card for evaluators.
-- [ ] Dry run full demo; capture photos/video with timestamps.
+**Goal:** Complete physical integration and empirical data collection on display rig.
 
-**Exit criteria:** Full PRD compliance at system level — everything above in one unattended run.
+- [ ] Full-system integration in display acrylic containment tray (per `docs/FULL_SCALE_BOM.md`).
+- [ ] 4-hour continuous discharge run at 15 mA; record $V_{\text{stack}}(t)$ and $V_{\text{rail}}(t)$.
+- [ ] Empirical $V\text{–}I$ polarization curves ($0\text{ to }30\text{ mA}$) and internal resistance extraction.
+- [ ] Inrush current capture on digital storage oscilloscope (DSO) validating $C_{\text{in}}$ buffer sizing.
+- [ ] Video recording of live cold-start without wall power or external buffer.
 
-### Phase 5 — Documentation, Patent Paper, Defense Prep (Week 7–8)
+**Exit criteria (Phase 4 gates):**
+- System operates autonomously for 4 hours meeting all PRD thresholds.
+- Zero battery assistance verified.
+- Empirical datasets logged in `data/` directory.
 
-- [ ] Finalize all measurements into `data/` + graphs (see `tools/` plotting scripts).
-- [ ] Write thesis/report skeleton (`docs/REPORT.md`).
-- [ ] Draft patent claims (device + composition) — see `docs/PATENT_STRATEGY.md`.
-- [ ] Compile Q&A bank for viva/defense (`docs/PRESENTATION.md`).
-- [ ] Final demo rehearsal to evaluators.
+### Phase 5 — Patent Filing & IEEE Conference Publication (Week 7)
+
+**Goal:** Secure intellectual property priority date and submit conference paper.
+
+- [ ] **Provisional Patent Application:** File provisional patent with Indian Patent Office (IPO) under Educational Institution tier (Statutory fee: ₹1,750). Claims focus on:
+  1. Composite separator architecture (de-resinated lignocellulose + unglazed porous ceramic shell).
+  2. Sub-volt energy-harvesting electrolyzer package with source-impedance matched PMIC.
+- [ ] **IEEE Conference Manuscript Preparation:** Target IEEE TENSYMP 2026 / IEEE TENCON (Region 10 conference with IEEEXplore indexing):
+  1. Empirical polarization and discharge curves.
+  2. Randles equivalent circuit model validation.
+  3. Faradaic efficiency ($\eta_F$) and gas yield calculations.
+  4. Comparative benchmarking table against $\ge 3$ recent sustainable energy harvesting works.
+- [ ] Departmental viva presentation rehearsal with live hardware demonstrator.
+
+**Exit criteria (Phase 5 gates):**
+- Provisional patent application filed with IPO.
+- Conference manuscript completed with empirical datasets.
+- Successful viva defense with live working prototype.
 
 ---
 

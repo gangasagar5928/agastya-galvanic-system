@@ -17,9 +17,9 @@
 | 7 | **Electrochemistry:** Half-reactions, Nernst (E° = 2.20 V stack → 2.32 V Nernst), overpotentials |
 | 8 | **PMIC:** TPS61099, cold-start < 0.9 V, sync rectification, efficiency budget → 82 %+ |
 | 9 | **Electrolyzer:** Faraday's law, 15 mA → ~1 mL/min H₂, Faradaic efficiency ≥ 70 % |
-| 10 | **Results:** Voc/I_sc/Polarization/η/H₂ plots (from `data/`) |
-| 11 | **PRD Verification Matrix:** all rows pass/fail |
-| 12 | **Patent Position:** Claim device + composition, not chemistry (§3(p) respect) |
+| 10 | **Results:** Empirical Voc/I_sc/Polarization/η/H₂ plots (bench logs from `data/`) |
+| 11 | **PRD Verification Matrix:** Gate status (Phase 0 complete; experimental verification gates) |
+| 12 | **Patent & Publication Strategy:** Provisional filing (§3(p) device/composition claim) & IEEE TENSYMP 2026 conference track |
 | 13 | **Sustainability Scorecard:** vs Li-ion & Pb-acid |
 | 14 | **Future:** Scaling, sensor integration, IoT nodes |
 | 15 | **Q&A** |
@@ -92,6 +92,16 @@ A19. Spent CuSO₄ → hazardous-waste point (copper is aquatic toxin, not down 
 
 **Q20. What's the environmental footprint?**
 A20. Materials: kiln-fired clay (~CO₂ from firing), mined Cu/Zn (pre-existing supply chains), wood by-product. All offset by zero recharge-cycle energy and biodegradable end-of-life.
+
+### Category F — Reviewer Challenges & Edge Cases
+**Q21. Your stack internal resistance is 14–18 Ω/cell (~30 Ω stack), 4–9× higher than a classic Daniell cell. Won't startup inrush current collapse the input voltage below the TPS61099 cold-start threshold?**
+A21. Direct hardwired startup (`EN = VIN`) would indeed sag voltage below UVLO ($50\text{ mA} \times 30\ \Omega = 1.5\text{ V}$ drop). We mitigated this by: (1) an input buffer reservoir capacitor ($C_{\text{in}} = 220\ \mu\text{F} \parallel 47\ \mu\text{F}$) supplying $\sim 0.61\text{ mJ}$ of energy to absorb the 5 ms startup inrush spike; (2) a delayed/hysteretic enable pin holding the PMIC in 1 µA shutdown until $C_{\text{in}}$ reaches full $V_{\text{oc}}$; and (3) larger surface-area electrodes in the full-scale build dropping stack $R_{\text{int}}$ to $\le 16\ \Omega$.
+
+**Q22. Why target an IEEE conference rather than an IEEE Transactions journal?**
+A22. Transactions journals require 2+ years of continuous cycling data and advanced EIS spectroscopy. An IEEE Region 10 conference (such as IEEE TENSYMP 2026 or TENCON) provides peer-reviewed IEEEXplore indexing suitable for an undergraduate capstone, while establishing verified prior art to support our provisional patent application.
+
+**Q23. Why does the GitHub repository show Phase 0 while the presentation outline covers the entire pipeline?**
+A23. Phase 0 represents completed foundations (safety analysis, PMIC modeling, PRD specification, and BOM procurement). The remaining phases represent the planned 6-week execution gates. Metrics in the presentation are explicit target thresholds to be verified on the bench, not pre-claimed results.
 
 ---
 

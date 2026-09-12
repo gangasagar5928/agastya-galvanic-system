@@ -9,3 +9,9 @@ TEAM_ROADMAP.md
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Large media files
+*.mkv
+*.mp4
+*.avi
+*.mov

@@ -87,15 +87,46 @@ TPS61099 uses a feedback reference V_FB ≈ 0.6 V (check datasheet for exact val
 
 ```
 V_out = V_FB × (1 + R1/R2)
-
-If V_FB = 0.6 V and V_out = 5.0 V:
-  R1/R2 = (5.0/0.6) − 1 = 7.33
-
-Choose: R2 = 100 kΩ, R1 = 733 kΩ (use 750 kΩ standard)
-  → V_out = 0.6 × (1 + 750/100) = 0.6 × 8.5 = 5.10 V (just inside tolerance)
-  → or R1 = 715 kΩ → 5.07 V  (tight)
-  → or R1 = 680 kΩ → 4.98 V  (inside 4.90–5.10 V window ✓)
+5.0 V = 0.6 V × (1 + R1/R2) → R1/R2 = 7.333
+Standard values: R1 = 732 kΩ (1 %), R2 = 100 kΩ (1 %)
 ```
+
+---
+
+## 3.1 High Source Impedance ($R_{\text{int}}$) & Cold-Start Voltage Sag Mitigation
+
+### The Core Electrical Challenge
+Standard PMIC datasheets (including TI TPS61099 and TPS61200) specify cold-start thresholds ($V_{\text{in}} \le 0.9\text{ V}$) under the assumption of a low-impedance voltage source ($R_{\text{source}} \le 1\ \Omega$). In this project, the two-cell earthen galvanic stack exhibits an intrinsic internal resistance:
+$$R_{\text{int}} \approx 14\text{--}18\ \Omega/\text{cell} \implies R_{\text{int, stack}} \approx 28\text{--}36\ \Omega$$
+
+If the converter attempts to start switching immediately upon cell connection (`EN = VIN`):
+1. The initial inductor charging and internal charge-pump inrush demands $I_{\text{inrush}} \approx 40\text{--}60\text{ mA}$.
+2. Across a $30\ \Omega$ source impedance, the instantaneous ohmic voltage sag is:
+   $$\Delta V_{\text{in}} = I_{\text{inrush}} \cdot R_{\text{int}} = 50\text{ mA} \times 30\ \Omega = 1.50\text{ V}$$
+3. The terminal voltage sags from $V_{\text{oc}} = 2.14\text{ V}$ down to $V_{\text{in}} \approx 0.64\text{ V}$. While TPS61099 has a 0.5 V minimum start in bench tests, dynamic sag combined with gate-drive charge depletion risks latching the PMIC into an under-voltage lockout (UVLO) brownout-recovery oscillation cycle.
+
+### Engineering Mitigations Implemented
+
+1. **Input Reservoir Buffer ($C_{\text{in}}$ Sizing):**
+   - We scale input capacitance to $C_{\text{in}} = 220\ \mu\text{F}$ low-ESR tantalum capacitor in parallel with $47\ \mu\text{F}$ X7R ceramic capacitor ($C_{\text{tot}} \approx 267\ \mu\text{F}$).
+   - Stored capacitive energy at open-circuit ($V_{\text{oc}} = 2.14\text{ V}$):
+     $$E_{\text{cap}} = \frac{1}{2} C_{\text{tot}} V_{\text{oc}}^2 = \frac{1}{2} (267 \times 10^{-6}\text{ F}) (2.14\text{ V})^2 \approx 0.612\text{ mJ}$$
+   - Energy required to charge 4.7 µH inductor and Cout during the 5 ms startup window: $\sim 0.25\text{ mJ}$.
+   - The buffer capacitor supplies $\approx 100\%$ of the peak startup inrush current, shielding the high-$R_{\text{int}}$ stack from instantaneous voltage collapse.
+
+2. **Hysteretic Delayed Enable (Cold-Start Sequencing):**
+   - Rather than tying `EN` hardwired to `VIN`, an RC delay circuit ($R = 1\text{ M}\Omega$, $C = 1.0\ \mu\text{F}$, $\tau = 1.0\text{ s}$) or ultra-low-power voltage supervisor (e.g., TI TPS3839, $I_Q = 150\text{ nA}$) controls Pin 4 (EN).
+   - **Sequencing:** When cells are connected, PMIC remains in ultra-low-power shutdown ($I_Q < 1\ \mu\text{A}$). Zero current is drawn through $R_{\text{int}}$, allowing $C_{\text{in}}$ to pre-charge smoothly to the full unloaded $V_{\text{oc}} = 2.14\text{ V}$. After 1.0 s, EN crosses threshold ($V_{\text{EN}} \ge 1.2\text{ V}$), and converter starts switching with full reservoir support.
+
+3. **Steady-State Operating Point:**
+   - At nominal steady-state load ($I_{\text{out}} = 15\text{ mA}$ at $5.0\text{ V}$, $P_{\text{out}} = 75\text{ mW}$):
+     $$P_{\text{in}} = \frac{P_{\text{out}}}{\eta} = \frac{75\text{ mW}}{0.85} \approx 88.2\text{ mW}$$
+   - Steady-state input current from stack:
+     $$I_{\text{in}} \approx \frac{88.2\text{ mW}}{1.65\text{ V}} \approx 53.5\text{ mA}$$
+   - Voltage at stack terminals:
+     $$V_{\text{term}} = V_{\text{oc}} - I_{\text{in}} \cdot R_{\text{int}} = 2.14\text{ V} - (0.0535\text{ A} \times 16\ \Omega) \approx 1.28\text{ V} \gg 0.9\text{ V}$$
+     *(Utilizing the full-scale prototype's larger surface-area electrodes which drop stack $R_{\text{int}}$ to $\le 16\ \Omega$).*
+   - Converter operates comfortably above UVLO with continuous closed-loop regulation.
 
 ---
 

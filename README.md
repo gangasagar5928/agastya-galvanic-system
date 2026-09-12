@@ -26,11 +26,10 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 
 ## Quick Start
 
-1. **Read** [`ROADMAP.md`](ROADMAP.md) — schedule, gates, risk register.
-2. **Read** [`wiki.md`](wiki.md) — the live project index (start here).
-3. **Read** [`docs/SAFETY.md`](docs/SAFETY.md) **before touching any chemicals.**
-4. **Order parts** from [`docs/BOM.md`](docs/BOM.md) (≤ ₹1,500 budget).
-5. **Build & log** per the phases — every measurement lands in [`data/`](data/).
+1. **Procurement & Build:** [`docs/FULL_SCALE_BOM.md`](docs/FULL_SCALE_BOM.md) — full-scale display model BOM & engineering improvements.
+2. **Lab Safety:** [`docs/SAFETY.md`](docs/SAFETY.md) — read before handling chemical reagents.
+3. **Engineering Roadmap:** [`ROADMAP.md`](ROADMAP.md) — academic milestones, gates & risk register.
+4. **Technical Wiki:** [`wiki.md`](wiki.md) — comprehensive mathematical models & EEE theory.
 
 ## Documentation Index
 
@@ -38,9 +37,10 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 |---|---|
 | [`ROADMAP.md`](ROADMAP.md) | Milestones, workback schedule, risk register, success gate checklist |
 | [`wiki.md`](wiki.md) | Live project index, system overview, directory map |
+| [`docs/FULL_SCALE_BOM.md`](docs/FULL_SCALE_BOM.md) | Full-scale prototype BOM with component specs, sourcing & improvements |
+| [`docs/BOM.md`](docs/BOM.md) | Benchtop PoC bill of materials |
 | [`docs/PRD.md`](docs/PRD.md) | Formal requirements & verification matrix |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System block diagram & interfaces |
-| [`docs/BOM.md`](docs/BOM.md) | Bill of materials with costs & sourcing |
 | [`docs/SAFETY.md`](docs/SAFETY.md) | Hazard assessment, PPE, waste & emergency procedures |
 | [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Nernst, polarisation, R_int, Faraday theory |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budget |

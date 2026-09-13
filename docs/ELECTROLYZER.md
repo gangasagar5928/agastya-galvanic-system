@@ -78,7 +78,7 @@ V_cell = E_rev + η_c + η_a + I·R_elyte
        ≈ 2.40 V    (at 15.14 mA on graphite)
 ```
 
-> **Conclusion:** The 5.05 V rail is more than sufficient. A series ballast resistor is required to drop the excess potential ($5.05\text{ V} - 2.40\text{ V} = 2.65\text{ V}$), setting the operating current precisely to $15.14\text{ mA}$.
+> **Design Projection:** The proposed 5.05 V rail is expected to provide ample potential. A series ballast resistor is sized to drop excess potential ($5.05\text{ V} - 2.40\text{ V} = 2.65\text{ V}$), setting the operating current target to approximately $15.14\text{ mA}$, subject to fabricated-cell verification.
 
 ### 4.4 Ballast Resistor Sizing & Dissipation: Dual-Tier Framework
 
@@ -100,9 +100,9 @@ P_ballast = I² · R_ballast = (0.01514 A)² × 175 Ω = 0.0401 W = 40.1 mW
 ```
 A standard **$175\ \Omega$ (or $180\ \Omega$), $0.5\text{ W}$ metal film resistor** provides ample thermal headroom ($12.5\times$ derating).
 
-### 4.5 Complete Electrolysis Energy Budget & Power Flow
+### 4.5 Complete Electrolysis Energy Budget & Power Flow (Modeled Projections)
 
-Electrochemical water splitting has two thermodynamic reference thresholds:
+The proposed electrolyzer is expected to achieve a regulated 5.05 V rail and measurable hydrogen evolution. Actual Faradaic efficiency, gas yield, zinc consumption, and long-duration stability will be determined during the experimental phase. Thermodynamic reference thresholds and projected power allocations are formulated below:
 1. **Reversible Potential ($E_{\text{rev}} = 1.229\text{ V}$ at $25^\circ\text{C}$):** Corresponds to Gibbs free energy change ($\Delta G^\circ = 237.18\text{ kJ/mol}$). Minimum non-expansion electrical work required.
 2. **Thermoneutral Potential ($E_{\text{th}} = 1.481\text{ V}$):** Corresponds to total reaction enthalpy under Higher Heating Value ($\Delta H^\circ_{\text{HHV}} = 285.83\text{ kJ/mol}$). Represents the true energy content stored in evolved $H_2$ gas.
 
@@ -133,7 +133,7 @@ Electrochemical water splitting has two thermodynamic reference thresholds:
 Under anodic polarization during the oxygen evolution reaction ($E > 1.23\text{ V}$ vs. SHE), unpassivated graphite electrodes undergo competing electrochemical carbon oxidation:
 $$\text{C}_{(s)} + 2\text{H}_2\text{O}_{(l)} \longrightarrow \text{CO}_{2(g)} + 4\text{H}^+_{(aq)} + 4e^- \quad (E^\circ = +0.207\text{ V vs. SHE})$$
 
-Because carbon oxidation is thermodynamically favored over water oxidation ($E^\circ = 0.207\text{ V}$ vs. $1.229\text{ V}$), a minor fraction of the anodic Faradaic charge participates in carbon oxidation rather than oxygen gas evolution. This parasitic pathway, alongside micro-bubble dissolution and capacitive double-layer charging, accounts for the observed $26.9\%$ Faradaic deficit ($\eta_F = 73.1\%$). Gravimetric measurements confirm total anode mass loss is limited to $\Delta m = 1.2 \pm 0.2\text{ mg}$ over 4 hours ($<0.8\%$ of active submerged mass), ensuring structural stability.
+Because carbon oxidation is thermodynamically favored over water oxidation ($E^\circ = 0.207\text{ V}$ vs. $1.229\text{ V}$), a minor fraction of the anodic Faradaic charge participates in carbon oxidation rather than oxygen gas evolution. This parasitic pathway, alongside micro-bubble dissolution and capacitive double-layer charging, accounts for the projected $26.9\%$ Faradaic deficit ($\eta_F = 73.1\%$). Projected anode mass loss is estimated at $\Delta m \approx 1.2\text{ mg}$ over 4 hours ($<0.8\%$ of active submerged graphite mass), which will be quantitatively evaluated via analytical balance gravimetry in Phase 3.
 
 ---
 

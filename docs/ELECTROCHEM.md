@@ -178,11 +178,11 @@ R_int (stack, series) ≈ 10–30 Ω
 
 ### 4.4 Actual vs. Simulated Parametric Measurements: Dual-Tier Framework
 
-To reconcile physical electrochemistry with power electronics requirements, parameters are partitioned into two validated operational tiers:
-- **Tier 1 (Benchtop PoC):** Compact planar electrodes ($A \approx 25\text{ cm}^2$), $100\text{ mL}$ unglazed terracotta pots, unoptimized hardwood sawdust matrix ($R_{\text{int}} \approx 29.4\ \Omega$). Designed for continuous sub-milliwatt micro-sensor loads or low-rate micro-electrolysis ($5.03\text{ mA}$ rail load).
-- **Tier 2 (Full-Scale Display Prototype):** Large-area cylindrical electrodes ($A \approx 120\text{ cm}^2$), thin-walled high-porosity terracotta liners, hydrogel-stabilized matrix ($R_{\text{int}} \approx 9.78\ \Omega$). Designed for continuous $15.14\text{ mA}$ rail delivery ($76.4\text{ mW}$) to the graduated electrolyzer tube.
+To reconcile physical electrochemistry with power electronics requirements, parameters are partitioned into two modeled operational tiers (subject to bench verification during physical testing):
+- **Tier 1 (Benchtop PoC Baseline):** Compact planar electrodes ($A \approx 25\text{ cm}^2$), $100\text{ mL}$ unglazed terracotta pots, unoptimized hardwood sawdust matrix ($R_{\text{int}} \approx 29.4\ \Omega$). Modeled for continuous sub-milliwatt micro-sensor loads or low-rate micro-electrolysis ($5.03\text{ mA}$ rail load).
+- **Tier 2 (Proposed Full-Scale Geometry):** Large-area cylindrical electrodes ($A \approx 120\text{ cm}^2$), thin-walled high-porosity terracotta liners, hydrogel-stabilized matrix ($R_{\text{int}} \approx 9.78\ \Omega$). The proposed Tier 2 geometry is expected to deliver approximately $92.79\text{ mW}$, subject to validation through fabricated-cell testing, supplying a continuous $15.14\text{ mA}$ rail load ($76.4\text{ mW}$) to the graduated electrolyzer tube.
 
-| Parameter / Metric | Symbol | Tier 1: Benchtop PoC ($R_{\text{int}} = 29.4\ \Omega$) | Tier 2: Full-Scale Prototype ($R_{\text{int}} = 9.78\ \Omega$) | Governing Physics / Formulation |
+| Parameter / Metric | Symbol | Tier 1: Benchtop PoC ($R_{\text{int}} = 29.4\ \Omega$) | Tier 2: Proposed Full-Scale ($R_{\text{int}} = 9.78\ \Omega$) | Governing Physics / Formulation |
 |:---|:---:|:---:|:---:|:---|
 | **Open-Circuit Voltage (Stack)** | $V_{\text{oc}}$ | $2.180\text{ V}$ | $2.180\text{ V}$ | $2\times$ Nernst potential ($1.090\text{ V}$/cell) |
 | **Stack Internal Resistance** | $R_{\text{int}}$ | **$29.4\ \Omega$** | **$9.78\ \Omega$** | Tortuous capillary path ($14.7\ \Omega$ vs $4.89\ \Omega$/cell) |
@@ -201,7 +201,7 @@ To reconcile physical electrochemistry with power electronics requirements, para
 | **Electrolyzer Power Draw** | $P_{\text{cell}}$ | **$10.20\text{ mW}$** (40.1% rail) | **$36.35\text{ mW}$** (47.5% rail) | $P_{\text{cell}} = V_{\text{cell}} \times I_{\text{rail}}$ |
 | **Cumulative Energy (Stack, 1 h)** | $E_{1\text{h}}$ | $30.86\text{ mWh}$ (**$111.1\text{ J}$**) | $92.79\text{ mWh}$ (**$334.0\text{ J}$**) | $\int P_{\text{stack}} dt$ over $3600\text{ s}$ |
 | **Cumulative Energy (Stack, 2 h)** | $E_{2\text{h}}$ | $60.50\text{ mWh}$ (**$217.8\text{ J}$**) | $180.2\text{ mWh}$ (**$648.7\text{ J}$**) | Accounting for minor concentration sag ($2.5\%$) |
-| **Cumulative Energy (Stack, 4 h)** | $E_{4\text{h}}$ | $118.0\text{ mWh}$ (**$424.8\text{ J}$**) | $341.6\text{ mWh}$ (**$1229.8\text{ J}$**) | Gate 4 criteria verified; Zn mass loss checked |
+| **Cumulative Energy (Stack, 4 h)** | $E_{4\text{h}}$ | $118.0\text{ mWh}$ (**$424.8\text{ J}$**) | $341.6\text{ mWh}$ (**$1229.8\text{ J}$**) | Target benchmark for Gate 4 milestone verification |
 | **Cumulative Energy (Stack, 24 h)**| $E_{24\text{h}}$ | $650.0\text{ mWh}$ (**$2340.0\text{ J}$**) | $1860.0\text{ mWh}$ (**$6696.0\text{ J}$**) | Extended run under partial drain |
 
 ---
@@ -220,7 +220,7 @@ To determine the optimal cell architecture, single-cell, two-cell series, and tw
 | **PMIC Startup Inrush Droop ($\Delta V$)** | $55\text{ mA} \times 14.7\ \Omega = 0.81\text{ V}$ | **$55\text{ mA} \times 29.4\ \Omega = 1.62\text{ V}$** | $55\text{ mA} \times 7.35\ \Omega = 0.40\text{ V}$ | Buffered by $C_{\text{in}} = 267\ \mu\text{F}$ in all cases |
 | **Post-Inrush Loaded Voltage ($V_{\text{loaded}}$)** | $0.28\text{ V} < V_{\text{UVLO}}$ (Reset!) | **$0.56\text{ V} \approx V_{\text{UVLO}}$ (Buffered $\to 1.45\text{ V}$)** | $0.69\text{ V} > V_{\text{UVLO}}$ | Unbuffered Single Cell cannot cold-start |
 | **TPS61099 Converter Efficiency ($\eta$)** | $\sim 71\%$ (boosting $0.8\text{ V} \to 5\text{ V}$) | **$82.4\%$ (boosting $1.6\text{ V} \to 5\text{ V}$)** | $\sim 71\%$ (boosting $0.8\text{ V} \to 5\text{ V}$) | **Series delivers $+11.4\%$ higher efficiency** |
-| **Downstream 5.0 V Rail Feasibility** | Marginally feasible | **Fully validated & stable** | Feasible, but high inductor losses | **Series (2S1P) is the selected architecture** |
+| **Downstream 5.0 V Rail Feasibility** | Marginally feasible | **Modeled stable operating window** | Feasible, but high inductor losses | **Series (2S1P) is the selected architecture** |
 
 > **Design Decision Verdict:** The **2-Cell Series (2S1P)** topology was selected because the boost converter conversion efficiency scales directly with input voltage ($\eta \propto V_{\text{in}}/V_{\text{out}}$). Boosting from $1.62\text{ V} \to 5.05\text{ V}$ requires a duty cycle $D \approx 68\%$, achieving $\eta = 82.4\%$. Boosting from a parallel or single cell ($0.81\text{ V} \to 5.05\text{ V}$) requires an extreme duty cycle $D \approx 84\%$, elevating switch conduction losses and reducing efficiency to $\sim 71\%$.
 
@@ -289,7 +289,7 @@ Sources of loss:
 
 ### 5.3 Realistic Electrolysis Energy Budget & Complete System Power Flow
 
-Electrochemical water splitting is governed by thermodynamic thresholds, kinetic overpotentials, and Faradaic yield:
+The proposed electrolyzer is expected to achieve a regulated 5.05 V rail and measurable hydrogen evolution. Actual Faradaic efficiency, gas yield, zinc consumption, and long-duration stability will be determined during the experimental phase. Thermodynamic reference thresholds and projected analytical power allocations are formulated below:
 - **Reversible Potential ($E_{\text{rev}}$):** $\Delta G^\circ / (nF) = 237.18\text{ kJ/mol} / (2 \times 96485\text{ C/mol}) = 1.229\text{ V}$ at $25^\circ\text{C}$ (minimum non-expansion work required).
 - **Thermoneutral Potential ($E_{\text{th}}$):** $\Delta H^\circ_{\text{HHV}} / (nF) = 285.83\text{ kJ/mol} / (2 \times 96485\text{ C/mol}) = 1.481\text{ V}$ (enthalpy threshold based on Higher Heating Value).
 - **Lower Heating Value Potential ($E_{\text{LHV}}$):** $\Delta H^\circ_{\text{LHV}} / (nF) = 241.82\text{ kJ/mol} / (2 \times 96485\text{ C/mol}) = 1.253\text{ V}$.
@@ -416,7 +416,7 @@ V(V)
 ### 9.3 Physical & Chemical Limitations of the Earthen Galvanic Architecture
 1. **Evaporation & Salt Efflorescence:** Porous unglazed terracotta permits slow capillary transpiration of water to the exterior air. Over 48+ hours of continuous operation, evaporation concentrates the copper sulfate, leading to visible blue-green salt efflorescence on the outer vessel walls unless a non-porous outer casing or periodic rehydration is applied.
 2. **Elevated Internal Source Resistance:** The tortuous ionic pathways across the porous clay wall and compacted lignocellulose sawdust matrix result in a baseline internal resistance ($R_{\text{int}} \approx 28\text{--}32\ \Omega$ in unoptimized PoC, reducible to $\sim 9.8\ \Omega$ with large cylindrical electrodes), which is 5–10× higher than standard commercial liquid Daniell cells. This limits raw short-circuit current, necessitating synchronous boost PMIC conversion and capacitive inrush decoupling.
-3. **Anodic Carbon Oxidation in Neutral Media:** Under prolonged operation, graphite rods in neutral $\text{Na}_2\text{SO}_4$ undergo slow, competing electrochemical carbon oxidation ($\text{C} + 2\text{H}_2\text{O} \to \text{CO}_2 + 4\text{H}^+ + 4e^-$ at $E^\circ = 0.207\text{ V}$), which accounts for a minor Faradaic deficit ($\sim 26.9\%$) and gradual electrode mass loss ($1.2\text{ mg}$ per 4 hours).
+3. **Anodic Carbon Oxidation in Neutral Media:** Under prolonged operation, graphite rods in neutral $\text{Na}_2\text{SO}_4$ may undergo slow, competing electrochemical carbon oxidation ($\text{C} + 2\text{H}_2\text{O} \to \text{CO}_2 + 4\text{H}^+ + 4e^-$ at $E^\circ = 0.207\text{ V}$), which accounts for an estimated Faradaic deficit ($\sim 26.9\%$) and projected minor electrode mass loss ($\sim 1.2\text{ mg}$ per 4 hours), to be evaluated during bench experiments.
 4. **Chemical Hazard & Ecotoxicity Reality:** While the terracotta vessel and sawdust matrix are natural and biodegradable, dissolved copper sulfate ($\text{CuSO}_4$) is an acute aquatic ecotoxin (GHS07: Harmful if swallowed; GHS09 / H410: Very toxic to aquatic life with long-lasting effects). The system is non-lithium and lead-free, but cannot be classified as "100% non-toxic". Decommissioning requires chemical waste management: spent catholyte must undergo scrap-iron cementation ($\text{Fe} + \text{Cu}^{2+} \to \text{Fe}^{2+} + \text{Cu}\downarrow$) or carbonate precipitation prior to disposal.
 5. **Gravimetric Energy Density Trade-Off:** The primary earthenware stack delivers a modest specific energy density ($\sim 12\text{--}18\text{ Wh/kg}$) compared to commercial lithium cells ($>200\text{ Wh/kg}$). Its optimal application domain is strictly stationary, non-toxic, disposable environmental telemetry, soil monitoring, and green hydrogen educational demonstrations.
 

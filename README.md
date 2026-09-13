@@ -42,7 +42,8 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 | [`docs/PRD.md`](docs/PRD.md) | Formal requirements & verification matrix |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System block diagram & interfaces |
 | [`docs/SAFETY.md`](docs/SAFETY.md) | Hazard assessment, PPE, waste & emergency procedures |
-| [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Nernst, polarisation, R_int, Faraday theory |
+| [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Nernst, polarisation, R_int, energy budget, configuration benchmarks |
+| [`docs/HISTORICAL_ANALYSIS.md`](docs/HISTORICAL_ANALYSIS.md) | Ancient Sanskrit text, word-by-word translation, evidence vs interpretation |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budget |
 | [`docs/ELECTROLYZER.md`](docs/ELECTROLYZER.md) | Electrolyzer design, gas metrology, η_F protocol |
 | [`docs/SYLLABUS_MAPPING.md`](docs/SYLLABUS_MAPPING.md) | EEE domain mapping ("New POV") |

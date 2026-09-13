@@ -56,6 +56,7 @@ The system is **100 % biodegradable, non-toxic, and lithium-free** — a disposa
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System architecture, block diagram, interfaces |
 | [`docs/BOM.md`](docs/BOM.md) | Benchtop PoC bill of materials with specs & sourcing |
 | [`docs/SAFETY.md`](docs/SAFETY.md) | Hazard assessment, PPE, waste handling |
+| [`docs/HISTORICAL_ANALYSIS.md`](docs/HISTORICAL_ANALYSIS.md) | Philological provenance, Sanskrit parsing, historical vs modern demarcation, uncertainty analysis |
 | [`docs/ELECTROCHEM.md`](docs/ELECTROCHEM.md) | Electrochemistry theory, ancient citations, Nernst, polarisation |
 | [`docs/PMIC.md`](docs/PMIC.md) | Boost converter design, IC selection, efficiency budgeting |
 | [`docs/ELECTROLYZER.md`](docs/ELECTROLYZER.md) | Electrolyzer design, Faradaic efficiency, gas metrology |
@@ -220,6 +221,7 @@ agastya-galvanic-system/
 │   ├── FULL_SCALE_BOM.md
 │   ├── BOM.md
 │   ├── SAFETY.md
+│   ├── HISTORICAL_ANALYSIS.md
 │   ├── ELECTROCHEM.md
 │   ├── PMIC.md
 │   ├── ELECTROLYZER.md

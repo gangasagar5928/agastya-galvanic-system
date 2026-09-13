@@ -42,7 +42,7 @@ We implement this classical formulation using modern precision materials and pow
 2. **An ultra-low-input synchronous boost converter** that cold-starts below **0.9 V** and steps the variable 1.6–2.2 V stack up to a regulated **5.0 V ± 2 % rail at ≥ 82 % efficiency**.
 3. **A solid-state micro-electrolyzer** using **non-sacrificial graphite pencil electrodes** inside a **graduated micro-fluidic gas collection tube** — producing visible hydrogen with **zero secondary battery assistance**.
 
-The system is **100 % biodegradable, non-toxic, and lithium-free** — a disposable off-grid power source for micro-sensors.
+The system features a **biodegradable terracotta/lignocellulose structural matrix, lead-free and lithium-free architecture, and managed heavy-metal waste neutralization** — providing disposable primary power for off-grid micro-sensors.
 
 ---
 
@@ -200,7 +200,7 @@ The primary engineering contributions are:
 
 | EEE Domain | This project's contribution |
 |---|---|
-| Energy Storage Systems & Materials | Non-toxic primary storage replacing Li/Pb chemistries |
+| Energy Storage Systems & Materials | Lithium-free, lead-free primary storage with biodegradable earthen matrix |
 | Power Electronics | Ultra-low-input synchronous boost; impedance-matched converters |
 | Electrochemical Engineering | Polarization curves, overpotential, R_int, Faradaic efficiency |
 

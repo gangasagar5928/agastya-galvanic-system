@@ -39,7 +39,7 @@
 | Application | Education / classic primary cell | **Disposable off-grid micro-sensor power** |
 | Power interface | Raw analogue, unregulated | **5.0 V regulated rail via sync boost, impedance matched** |
 | Downstream use | — | **On-site hydrogen via micro-electrolyzer, no secondary battery** |
-| End-of-life | Discarded electrolyte, metal waste | **Biodegradable, non-toxic disposal pathway** |
+| End-of-life | Discarded electrolyte, metal waste | **Biodegradable matrix with chemical cementation of copper waste** |
 | Cultural anchor | European 19th-century chemistry | **Agastya Samhita lineage — traditional knowledge inspiration for sustainable architecture** |
 ---
 
@@ -47,12 +47,12 @@
 
 | Criterion | Li-ion | Pb-acid | **This project** |
 |---|---|---|---|
-| Electrolyte | Organic carbonate + LiPF₆ (toxic, flammable) | 30–40 % H₂SO₄ (corrosive) | Aqueous CuSO₄ (irritant, manageable) |
+| Electrolyte | Organic carbonate + LiPF₆ (toxic, flammable) | 30–40 % H₂SO₄ (corrosive) | Aqueous CuSO₄ (aquatic ecotoxin, neutralized via scrap iron) |
 | Metals | Li, Co, Ni (mining + geopolitics) | Pb (neurotoxin) | Cu, Zn (common, recyclable) |
 | End of life | Special recharge-collection programs | Hazmat collection | Terracotta → pottery waste; sawdust → compost; Cu/Zn → scrap |
 | Recyclability | Complex (~5 % energy recovery) | 95 %+ (established) | High (simple separation) |
 | Rechargeability | Yes | Yes | **No (primary by design — the point)** |
-| Fit for disposable μSensors | Over-engineered, cost-heavy | Hazard + weight | **Optimal (cheap, non-toxic, single-use)** |
+| Fit for disposable μSensors | Over-engineered, cost-heavy | Hazard + weight | **Optimal (low-cost, lead/lithium-free, single-use)** |
 
 ---
 

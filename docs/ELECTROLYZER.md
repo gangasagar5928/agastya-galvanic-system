@@ -80,32 +80,53 @@ V_cell = E_rev + η_c + η_a + I·R_elyte
 
 > **Conclusion:** The 5.05 V rail is more than sufficient. A series ballast resistor is required to drop the excess potential ($5.05\text{ V} - 2.40\text{ V} = 2.65\text{ V}$), setting the operating current precisely to $15.14\text{ mA}$.
 
-### 4.4 Ballast Resistor Sizing & Dissipation
+### 4.4 Ballast Resistor Sizing & Dissipation: Dual-Tier Framework
 
+To stabilize the operating point across the steep non-linear $I\text{--}V$ curve of the electrochemical cell without active current-mirror feedback, a passive series ballast resistor is placed in the 5.05 V rail:
+
+#### Tier 1: Benchtop PoC ($5.03\text{ mA}$ continuous drain, $R_{\text{int}} = 29.4\ \Omega$ stack)
 ```
-R_ballast = (V_rail − V_cell) / I = (5.05 V − 2.40 V) / 0.01514 A = 175 Ω
+V_cell ≈ 2.02 V  (at 5.03 mA on graphite electrodes)
+R_ballast = (V_rail − V_cell) / I = (5.050 V − 2.020 V) / 0.00503 A = 602 Ω  (standard 620 Ω)
+P_ballast = I² · R_ballast = (0.00503 A)² × 602 Ω = 0.0152 W = 15.2 mW
+```
+A standard **$620\ \Omega$, $0.25\text{ W}$ metal film resistor** operates well within its thermal rating ($>16\times$ derating).
+
+#### Tier 2: Full-Scale Display Prototype ($15.14\text{ mA}$ continuous drain, $R_{\text{int}} = 9.78\ \Omega$ stack)
+```
+V_cell ≈ 2.40 V  (at 15.14 mA on graphite electrodes)
+R_ballast = (V_rail − V_cell) / I = (5.050 V − 2.400 V) / 0.01514 A = 175 Ω  (standard 180 Ω)
 P_ballast = I² · R_ballast = (0.01514 A)² × 175 Ω = 0.0401 W = 40.1 mW
 ```
-
 A standard **$175\ \Omega$ (or $180\ \Omega$), $0.5\text{ W}$ metal film resistor** provides ample thermal headroom ($12.5\times$ derating).
 
 ### 4.5 Complete Electrolysis Energy Budget & Power Flow
 
-Electrochemical water splitting has two thermodynamic thresholds:
-1. **Reversible Potential ($E_{\text{rev}} = 1.229\text{ V}$ at $25^\circ\text{C}$):** Corresponds to Gibbs free energy change ($\Delta G^\circ = 237.2\text{ kJ/mol}$). Minimum electrical work required.
-2. **Thermoneutral Potential ($E_{\text{th}} = 1.481\text{ V}$):** Corresponds to total enthalpy change ($\Delta H^\circ = 285.8\text{ kJ/mol}$). If cell operates below $1.481\text{ V}$, it absorbs ambient heat; above $1.481\text{ V}$, excess electrical energy is released as heat.
+Electrochemical water splitting has two thermodynamic reference thresholds:
+1. **Reversible Potential ($E_{\text{rev}} = 1.229\text{ V}$ at $25^\circ\text{C}$):** Corresponds to Gibbs free energy change ($\Delta G^\circ = 237.18\text{ kJ/mol}$). Minimum non-expansion electrical work required.
+2. **Thermoneutral Potential ($E_{\text{th}} = 1.481\text{ V}$):** Corresponds to total reaction enthalpy under Higher Heating Value ($\Delta H^\circ_{\text{HHV}} = 285.83\text{ kJ/mol}$). Represents the true energy content stored in evolved $H_2$ gas.
 
-#### Detailed Energy & Power Distribution (15.14 mA Operating Point):
-| Subsystem Stage | Voltage / Potential | Current | Power | % of Boost Rail Power | Physical Mechanism |
+#### Energy & Power Distribution (Tier 2 Full-Scale, 15.14 mA Operating Point):
+| Subsystem Stage | Voltage / Potential | Current | Power | % of Rail Power | Physical Mechanism |
 |:---|:---:|:---:|:---:|:---:|:---|
-| **Regulated Boost Rail** | $5.05\text{ V}$ | $15.14\text{ mA}$ | **$76.4\text{ mW}$** | **$100.0\%$** | Gross electrical power supplied by PMIC |
-| **Ballast Resistor Drop** | $2.65\text{ V}$ | $15.14\text{ mA}$ | **$40.1\text{ mW}$** | **$52.5\%$** | Ohmic Joule heating in ballast resistor |
-| **Electrolyzer Cell Input** | $2.40\text{ V}$ | $15.14\text{ mA}$ | **$36.3\text{ mW}$** | **$47.5\%$** | Gross electrical power delivered to electrodes |
-| **Electrolyte Ohmic Drop ($IR$)** | $0.27\text{ V}$ | $15.14\text{ mA}$ | **$4.1\text{ mW}$** | $5.4\%$ | Solution ionic resistance ($R_{\text{sol}} \approx 18\ \Omega$) |
-| **Anodic Overpotential ($\eta_{\text{OER}}$)** | $0.55\text{ V}$ | $15.14\text{ mA}$ | **$8.3\text{ mW}$** | $10.9\%$ | Sluggish oxygen evolution kinetics on carbon |
-| **Cathodic Overpotential ($\eta_{\text{HER}}$)** | $0.35\text{ V}$ | $15.14\text{ mA}$ | **$5.3\text{ mW}$** | $6.9\%$ | Hydrogen evolution activation energy |
-| **Reversible Thermodynamic Work** | $1.23\text{ V}$ | $15.14\text{ mA}$ | **$18.6\text{ mW}$** | $24.3\%$ | Endothermic water-splitting reaction enthalpy |
-| **Chemical Power in Stored $\text{H}_2$** | — | — | **$11.3\text{ mW}$** | **$14.8\%$** | Higher Heating Value (HHV) accounting for $\eta_F = 73.1\%$ |
+| **Regulated Boost Rail** | $5.050\text{ V}$ | $15.14\text{ mA}$ | **$76.46\text{ mW}$** | **$100.0\%$** | Gross electrical power supplied by PMIC |
+| **Ballast Resistor Drop** | $2.650\text{ V}$ | $15.14\text{ mA}$ | **$40.11\text{ mW}$** | **$52.5\%$** | Ohmic Joule heating establishing unconditional operating stability |
+| **Electrolyzer Cell Input** | $2.400\text{ V}$ | $15.14\text{ mA}$ | **$36.35\text{ mW}$** | **$47.5\%$** | Gross electrical power delivered to cell terminals |
+| **Electrolyte Ohmic Drop ($IR$)** | $0.270\text{ V}$ | $15.14\text{ mA}$ | **$4.09\text{ mW}$** | $5.3\%$ | Solution ionic resistance ($R_{\text{sol}} \approx 18\ \Omega$) |
+| **Anodic Overpotential ($\eta_{\text{OER}}$)** | $0.550\text{ V}$ | $15.14\text{ mA}$ | **$8.33\text{ mW}$** | $10.9\%$ | Sluggish four-electron oxygen evolution kinetics on graphite |
+| **Cathodic Overpotential ($\eta_{\text{HER}}$)** | $0.350\text{ V}$ | $15.14\text{ mA}$ | **$5.30\text{ mW}$** | $6.9\%$ | Volmer-Heyrovsky activation energy on graphite |
+| **Reversible Thermodynamic Work** | $1.229\text{ V}$ | $15.14\text{ mA}$ | **$18.61\text{ mW}$** | $24.3\%$ | Endothermic water cleavage Gibbs work ($\Delta G^\circ$) |
+| **Chemical Power in Stored $\text{H}_2$ (HHV)**| $1.481\text{ V}$ (equiv) | $11.07\text{ mA}$ (eff) | **$16.39\text{ mW}$** | **$21.4\%$** | $P_{\text{H}_2(\text{HHV})} = \eta_F \cdot I_{\text{cell}} \cdot E_{\text{th}}$ ($\eta_F = 73.1\%$) |
+
+#### Energy & Power Distribution (Tier 1 Benchtop PoC, 5.03 mA Operating Point):
+| Subsystem Stage | Voltage / Potential | Current | Power | % of Rail Power | Physical Mechanism |
+|:---|:---:|:---:|:---:|:---:|:---|
+| **Regulated Boost Rail** | $5.050\text{ V}$ | $5.03\text{ mA}$ | **$25.43\text{ mW}$** | **$100.0\%$** | Gross electrical power delivered from 30.86 mW PoC stack |
+| **Ballast Resistor Drop** | $3.030\text{ V}$ | $5.03\text{ mA}$ | **$15.23\text{ mW}$** | **$59.9\%$** | Ohmic Joule heating in $602\ \Omega$ ballast |
+| **Electrolyzer Cell Input** | $2.020\text{ V}$ | $5.03\text{ mA}$ | **$10.20\text{ mW}$** | **$40.1\%$** | Gross electrical power delivered to cell terminals |
+| **Ohmic & Overpotential Losses**| $0.791\text{ V}$ | $5.03\text{ mA}$ | **$3.98\text{ mW}$** | $15.6\%$ | Solution IR ($0.09\text{ V}$) + HER ($0.22\text{ V}$) + OER ($0.48\text{ V}$) |
+| **Reversible Thermodynamic Work** | $1.229\text{ V}$ | $5.03\text{ mA}$ | **$6.18\text{ mW}$** | $24.3\%$ | Endothermic water cleavage Gibbs work |
+| **Chemical Power in Stored $\text{H}_2$ (HHV)**| $1.481\text{ V}$ (equiv) | $3.62\text{ mA}$ (eff) | **$5.36\text{ mW}$** | **$21.1\%$** | $P_{\text{H}_2(\text{HHV})} = \eta_F \cdot I_{\text{cell}} \cdot E_{\text{th}}$ ($\eta_F = 72.0\%$) |
 
 ### 4.6 Parasitic Anodic Side Reactions & Faradaic Deficit
 

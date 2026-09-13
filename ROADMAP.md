@@ -13,7 +13,7 @@ Build a working, demonstrable **eco-friendly primary battery stack** that:
 - Delivers **Voc ≥ 2.10 V** (two-cell series configuration), **Isc ≥ 20 mA**.
 - Boosts the variable 1.6–2.2 V stack to a regulated **5.0 V ± 2 % rail at ≥ 82 % end-to-end efficiency**.
 - Drives a **solid-state micro-electrolyzer** producing visible H₂ gas — **zero secondary battery assistance**.
-- Uses only **biodegradable, non-toxic, non-lithium materials**: terracotta, sawdust, copper, zinc, aqueous CuSO₄.
+- Uses a **biodegradable structural matrix and non-lithium, lead-free chemistry**: terracotta, sawdust, copper, zinc, with managed aqueous $\text{CuSO}_4$ waste neutralization.
 - Roots itself in the **Agastya Samhita** traditional-knowledge lineage while demonstrating defensible engineering novelty (device architecture + composite separator, not chemistry).
 
 **North Star metric:** Standalone demo where the cell stack alone (no bench supply, no rechargeable buffer) sustains ≥ 4 h continuous discharge at 15 mA while bubbling hydrogen within 10 s of circuit closure.

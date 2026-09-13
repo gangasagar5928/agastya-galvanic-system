@@ -99,10 +99,14 @@ A rigorous scientific project must separate textual evidence from retrospective 
 
 ## 4. Limitations and Historical Uncertainty
 
-### 4.1 Textual Provenance & Manuscript Authenticity
-- The surviving recensions referencing the battery verses appear primarily in modern printed anthologies citing the *Śilpa-Saṃhitā* (a craft-oriented section of the Agastya corpus).
-- Unlike canonical Vedic texts preserved via strict oral recitations (*pada-pāṭha*), technical treatises (*Śilpa-Śāstras*) underwent continuous scribal additions, revisions, and regional interpolation through the late medieval period.
-- Critical philological consensus (Ray, 1909; Keith, 1920) notes that while zinc metallurgy at Zawar (Rajasthan) is archaeologically proven to the 9th–12th century CE, the specific verse formulation may reflect early modern consolidation of metallurgical craft secrets.
+### 4.1 Textual Provenance & Critical Source Authentication
+- **Canonical vs. Apocryphal Manuscript Context:** Genuine ancient and medieval recensions of the *Agastya-Saṃhitā* (preserved in major manuscript repositories including the Adyar Library, Chennai, and the Saraswathi Mahal Library, Thanjavur) are canonical **Pāñcarātra Āgama** texts. They deal exclusively with Vaishnava temple iconography, rituals, initiation (*dīkṣā*), and the worship of Rama. They contain zero chapters on metallurgy, physical sciences, or electrochemistry.
+- **Late 19th-Century Syncretism:** The specific electrochemical verses (*Śilpa-Saṃhitā* recension) first appeared in modern print and secondary discourse during the late 19th and early 20th centuries (notably circulated around the Scindia Oriental Research Institute in Ujjain and popularized by revivalist scholars). Modern historians of Indian science (e.g., Debiprasad Chattopadhyaya, B. V. Subbarayappa) evaluate these passages as **19th-century post-Daniell syncretic verse compositions**.
+- **Linguistic and Conceptual Anachronisms:** 
+  1. The pairing of *Prāṇa* and *Udāna* specifically to the cathodic and anodic gases evolved during water electrolysis mirrors the late 18th-century discovery of water decomposition (Nicholson & Carlisle, 1800) and Faraday's laws (1834).
+  2. The specific chemical configuration (copper plate + copper sulfate + moist sawdust + mercury-amalgamated zinc) directly replicates the **Minotto Cell (1863)** and Lord Kelvin's sawdust-modified Daniell cell (1858), widely deployed across British India for the imperial telegraph network.
+  3. Composing Sanskrit metrical shlokas to synthesize modern European discoveries with classical Indian idioms was a well-documented practice among 19th-century pandits during the colonial Bengal Renaissance.
+- **Methodological Stance of This Project:** The project firmly rejects pseudoscientific assertions of "Vedic electricity" or "ancient power plants." The verses are investigated strictly as an intriguing historical-cultural thought model and pedagogical device. The engineering, thermodynamic, and physical validity of the device rests entirely on verified 19th–21st century electrochemical and electrical engineering science.
 
 ### 4.2 Chemical & Material Ambiguities
 - **Zinc Quality:** Pre-industrial Indian zinc (*dastā*) produced in retorts contained 1–3% lead and iron impurities. Immersion in copper sulfate without mercury amalgamation causes immediate parasitic corrosion ($Zn + 2H^+ \rightarrow Zn^{2+} + H_2\uparrow$), rapidly dissolving the anode without delivering external power. The textual prescription of *pārada-saṃyutaḥ* (mercury amalgamation) directly confirms that craftsmen observed this parasitic reaction and used mercury to elevate the hydrogen overpotential on zinc.

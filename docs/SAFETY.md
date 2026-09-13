@@ -10,13 +10,13 @@
 
 | Substance / Process | Hazard Class | Key Risk | Severity |
 |---|---|---|---|
-| **CuSO₄ (copper sulfate)** | Irritant (Xi) | Skin/eye irritation; harmful if swallowed; aquatic toxin | Med |
+| **CuSO₄ (copper sulfate)** | GHS07 + GHS09 (H302, H400, **H410**) | Harmful if swallowed; **very toxic to aquatic life with long-lasting effects**; skin/eye irritation | **High** |
 | **Zinc metal** | Flammable solid (met. powder) | Fine zinc dust ignition; stomach acid ingestion risk (not in this setup) | Low |
 | **ZnO / zinc fumes** | Toxic by inhalation | Zinc oxide fume fever (if heated; NOT applicable in this project) | Low |
 | **NaOH (sodium hydroxide)** | Corrosive (C) | Severe skin/eye burns; exothermic dissolution | **High** |
 | **Dilute H₂SO₄** (if used to prep Cu plates) | Corrosive (C) | Skin burns, respiratory irritation | **High** |
 | **H₂ gas** (electrolysis product) | Flammable (F) | Accumulation in enclosed space → explosion risk | Med |
-| **CuSO₄ solution (spent)** | Environmental toxin | Copper is highly toxic to aquatic organisms | Med |
+| **CuSO₄ solution (spent)** | GHS09 / H410 environmental toxin | Very toxic to aquatic life, long-lasting; **never drain** — cementation or hazardous waste disposal required | **High** |
 | **Graphite / pencil leads** | Inhalation (dust) | Fine carbon dust if broken; low acute toxicity | Low |
 | **Hot water (boiling sawdust)** | Thermal | Scalds from boiling water + steam | Low |
 | **Terracotta shards** | Mechanical | Sharp edges, breakage | Low |

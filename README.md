@@ -51,10 +51,10 @@ A two-cell **terracotta + sawdust earthen galvanic stack** (Zn / 1.0 M CuSO₄-i
 | [`docs/PRESENTATION.md`](docs/PRESENTATION.md) | Slides outline + viva Q&A bank |
 
 ## Project Status
-Current Phase: Phase 0/7 (Foundations & Documentation)
+Current Phase: Phase 0/7 (Foundations & Documentation — complete)
 
-- Initial specifications and safety analysis completed
-- Phase 1: Cell chemistry bench testing underway
+- All Phase 0 design documents, safety analysis, PRD, BOM, and historical analysis completed
+- Phase 1 (Cell chemistry bench testing): scheduled — pending materials procurement
 
 ---
 

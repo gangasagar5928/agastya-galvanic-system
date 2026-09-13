@@ -85,7 +85,7 @@ A17. Traditional setups suffer from Cu²⁺ crossover and short lifespans. Our i
 
 ### Category E — Sustainability / Ethics
 **Q18. Why not lithium-ion?**
-A18. Our target is disposable µ-sensors: Li is over-engineered (cost, recycling complexity) and has toxic extraction chain. Terracotta + wood + Cu/Zn is 100 % biodegradable/recyclable at a fraction of cost.
+A18. Our target is disposable µ-sensors: Li is over-engineered (cost, recycling complexity) and carries a toxic mining and recycling chain. Our earthen structural matrix (terracotta, sawdust) is biodegradable; Cu and Zn electrodes are recyclable scrap metals. CuSO₄ catholyte is an aquatic ecotoxin (GHS09/H410) and must be neutralised via scrap-iron cementation before disposal — not poured down a drain. Total system is non-lithium and lead-free, at a fraction of Li-ion cost.
 
 **Q19. How is waste handled?**
 A19. Spent CuSO₄ → hazardous-waste point (copper is aquatic toxin, not down the drain). Sawdust → compostable. Cu/Zn → scrap. Documented in `SAFETY.md`.

@@ -1,0 +1,14 @@
+LTspice 26.0.2 for Windows
+Circuit: D:\Departmental Project\Topic 1\hardware\agastya_system.cir
+Start Time: Wed Sep 23 23:26:38 2026
+solver = Normal
+Maximum thread count: 4
+tnom = 27
+temp = 27
+method = trap
+Per .tran options, skipping operating point for transient analysis.
+Total elapsed time: 2.899 seconds.
+
+Files loaded:
+D:\Departmental Project\Topic 1\hardware\agastya_system.cir
+

@@ -1,0 +1,22 @@
+Parameter,Simulated_Value,Unit,Description
+Stack_Voc,2.180,V,Open-circuit voltage of two-cell concentric series stack
+Stack_R_int,15.00,Ohm,Internal source resistance with alginate hydrogel
+Stack_I_sc,145.33,mA,Short-circuit current at 25 deg C
+Stack_P_max,68.79,mW,Maximum power output under matched impedance
+Stack_V_mpp,1.052,V,Terminal voltage at maximum power point
+Stack_I_mpp,65.37,mA,Current at maximum power point
+MPPT_Clamping_Voltage,1.052,V,Input regulation voltage maintained by BQ25504/LTC3105
+PMIC_Output_Rail,5.050,V,Regulated boost converter output rail
+PMIC_Conversion_Efficiency,82.0,%,End-to-end electrical power efficiency
+Supercapacitor_Capacitance,0.47,F,EDLC energy buffer capacitance
+Supercapacitor_Charge_Time,104.1,s,Time to charge from 0.1V to 5.0V
+BLE_Transmit_Current,20.00,mA,Peak current during 50ms RF burst
+BLE_Transmit_Sag,0.015,V,Voltage droop on 5.0V rail during RF burst
+BLE_Recovery_Time,0.051,s,Time for stack to replenish RF burst energy
+Electrolyzer_Operating_Current,15.14,mA,Regulated current through carbon cloth water splitter
+Electrolyzer_Cell_Voltage,2.400,V,Steady-state operating voltage across water-splitting cell
+Electrolyzer_Ballast_Resistance,175.00,Ohm,Series current-limiting ballast resistor
+H2_Gas_Rate_Theoretical,6.910,mL/h,Theoretical Faraday rate at 15.14 mA
+H2_Gas_Rate_Actual,5.079,mL/h,Actual modeled gas evolution rate
+Faradaic_Gas_Efficiency,73.5,%,Electrolyzer Faraday efficiency
+H2_Volume_4Hours,20.31,mL,Total hydrogen accumulated over 4 hours

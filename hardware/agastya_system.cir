@@ -1,0 +1,79 @@
+* THE AGASTYA GALVANIC SYSTEM: Complete SPICE Simulation Model
+* Modeling Concentric Earthen Galvanic Stack, MPPT Boost Converter, Supercapacitor Buffer, and Dual Load
+
+.title Agastya Galvanic System Simulation Model
+
+* ==============================================================================
+* 1. CONCENTRIC EARTHEN GALVANIC STACK (2 Cells in Series)
+* ==============================================================================
+* Open circuit potential: Voc = 2.18V
+V_stack_chem N_chem 0 DC 2.18
+
+* Bulk Ohmic + Charge Transfer Resistance (15 Ohms total for concentric hydrogel stack)
+R_int N_chem N_stack_term 15.0
+
+* Interfacial Double Layer Capacitance
+C_dl N_stack_term 0 100uF
+
+* ==============================================================================
+* 2. INPUT DECOUPLING & SENSING
+* ==============================================================================
+C_in N_stack_term 0 267uF
+
+* ==============================================================================
+* 3. BEHAVIORAL MPPT BOOST POWER MANAGEMENT UNIT (BQ25504 / LTC3105 Model)
+* ==============================================================================
+* Dynamic Input Clamping to V_MPP = 1.09 V (50% of Voc)
+* Boost Power Conversion Efficiency eta = 82%
+* Behavioral current draw at input: draws power up to P_max = 68.8 mW when V_in >= 1.09V
+* B_in draws current to regulate input rail to V_mpp
+B_in N_stack_term 0 I = min( (V(N_stack_term) - 1.09) * 2.0, 0.065 ) * u(V(N_stack_term) - 0.60)
+
+* Output current delivered to 5.0V rail: P_out = eta * P_in
+* Delivered current I_out = (0.82 * V(N_stack_term) * I(B_in)) / max(V(N_5V_rail), 1.0)
+B_boost_out 0 N_5V_rail I = (0.82 * V(N_stack_term) * (min( (V(N_stack_term) - 1.09) * 2.0, 0.065 ) * u(V(N_stack_term) - 0.60))) / max(V(N_5V_rail), 0.5)
+
+* Overvoltage clamp at 5.05V (zener diode behavioral model)
+D_clamp N_5V_rail N_zener D_ideal
+V_zener_ref N_zener 0 5.05
+.model D_ideal D(Ron=0.1 Roff=1Meg Vfwd=0.01)
+
+* ==============================================================================
+* 4. SUPERCAPACITOR ENERGY BUFFER (0.47 Farads / 5.5V EDLC)
+* ==============================================================================
+* Equivalent Series Resistance (ESR) = 80 mOhms
+R_esr N_5V_rail N_cap 0.08
+C_super N_cap 0 0.47 IC=0.1
+
+* Self-discharge leakage resistance (500 kOhms)
+R_leak N_5V_rail 0 500k
+
+* ==============================================================================
+* 5. DUAL-STAGE LOAD PLATFORM
+* ==============================================================================
+* --- LOAD PATH A: PULSED WIRELESS IoT TELEMETRY NODE ---
+* Transmits every 30 seconds: 20 mA pulse for 50 ms duration
+* Pulsed current source
+I_iot_burst N_5V_rail 0 PULSE(0 0.020 10.0 1m 1m 50m 30.0)
+
+* --- LOAD PATH B: MICRO-ELECTROLYZER ---
+* Series current-limiting ballast resistor (175 Ohms)
+* Activated by switch S_elec (turned on at t = 20s)
+S_elec N_5V_rail N_elec_in N_ctrl 0 SW_IDEAL
+V_ctrl N_ctrl 0 PULSE(0 1.0 20.0 1m 1m 100 200)
+.model SW_IDEAL SW(Ron=0.01 Roff=10Meg Vt=0.5)
+
+R_ballast N_elec_in N_cell 175.0
+
+* Electrolyzer cell counter-EMF (thermodynamic 1.23V + overpotentials = 2.40V)
+V_elec_emf N_cell N_anode DC 2.20
+R_sol N_anode 0 15.0
+
+* ==============================================================================
+* 6. SIMULATION CONTROL DIRECTIVES
+* ==============================================================================
+* Transient analysis from 0 to 60 seconds (captures startup, supercap ramp, and first BLE burst)
+.tran 0 60 0 0.01 uic
+
+.backanno
+.end
